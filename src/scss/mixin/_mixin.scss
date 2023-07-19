@@ -1,0 +1,59 @@
+@use "../_variables/variables";
+
+@mixin responsive($responsive-breakpoints) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($responsive-breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($responsive-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// flex & flex-direction: row & align-items: center;
+@mixin flex($direction: normal, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin trans($t: 400) {
+  transition: all ease-in-out #{$t}ms;
+}
+
+@mixin intro($A: Y) {
+  animation: in forwards 400ms;
+  @keyframes in {
+    0% {
+      transform: translate#{$A }(-200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate#{$A }(0);
+      opacity: 1;
+    }
+  }
+}
+@mixin out($A: Y) {
+  animation: in forwards 400ms;
+  @keyframes in {
+    0% {
+      transform: translate#{$A }(-200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate#{$A }(0);
+      opacity: 1;
+    }
+  }
+  
+}

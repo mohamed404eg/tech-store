@@ -1,0 +1,277 @@
+@use "../../../scss/mixin/mixin" as *;
+@use "../../../scss/_variables/variables" as *;
+
+.header-second {
+  height: 92px;
+  background-color: $color-11;
+  @include flex($direction: row, $justify: space-between, $align: center);
+
+  .client {
+    @include flex(row, center, center);
+    column-gap: 25px;
+    height: 92px;
+
+    .cart {
+      position: relative;
+      width: 25px;
+      height: 25px;
+
+      .icon-num {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        margin-bottom: 23px;
+        img {
+          cursor: pointer;
+        }
+
+        span {
+          width: 16px;
+          height: 16px;
+          background-color: $color-3;
+          border-radius: 50%;
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          position: absolute;
+          left: 17px;
+          bottom: 15px;
+        }
+      }
+    }
+    // .pop-Cart
+    .pop-Cart {
+      border: 1px solid $color-6;
+      width: 310px;
+      height: 520.533px;
+      background: $color-11;
+
+      position: absolute;
+      right: -31px;
+      padding-top: 23px;
+      text-align: center;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 84%;
+        transform: translateX(-30%);
+        border: 15px transparent solid;
+
+        border-bottom-color: $color-6;
+      }
+      .MyCart {
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; /* 25.2px */
+      }
+
+      .MyCart {
+        color: $color-7;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; /* 25.2px */
+      }
+      .numItem {
+        color: $color-5;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 6.72px;
+      }
+      .goCart {
+        width: calc(100% - 60px);
+        height: 37px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $color-3;
+        border-radius: 50px;
+        background-color: $color-11;
+        margin-top: 17.8px;
+
+        a {
+          color: $color-3;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-decoration: none;
+          padding: 8px 48.5px;
+        }
+      }
+
+      .line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $color-6;
+        margin-top: 20.23px;
+      }
+
+      .product {
+        @include flex(row, space-between, center);
+        .Quantity {
+          flex-basis: 10%;
+          max-width: 10%;
+        }
+        .Quantity-1 {
+          color: $color-7;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%; /* 25.2px */
+        }
+        .Quantity-2 {
+          color: $color-7;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+        }
+        .img {
+          flex-basis: 14%;
+          max-width: 14%;
+        }
+        .desc {
+          flex-basis: 30%;
+          max-width: 30%;
+          width: 153.202px;
+          height: 61.325px;
+          color: $color-7;
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          overflow: hidden;
+          word-break: break-all;
+          text-overflow: ellipsis;
+        }
+        .action {
+          flex-basis: 10%;
+          max-width: 10%;
+          @include flex(column, space-between, center);
+          column-gap: 4.96px;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .Subtotal {
+        width: 309px;
+        height: 25.023px;
+        margin-top: 16.57px;
+        .Subtotal-1 {
+          color: $color-5;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 140%; /* 19.6px */
+        }
+        .Subtotal-2 {
+          color: $color-7;
+          font-family: Poppins;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 140%;
+        }
+      }
+      .GoCheckout {
+        width: calc(100% - 60px);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        background: $color-3;
+        color: $color-11;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-top: 13.21px;
+        padding: 8px 70px;
+        cursor: pointer;
+      }
+      .GoCheckoutPaypal {
+        width: calc(100% - 60px);
+        @include flex(row, center, center);
+        width: 250px;
+        height: 37px;
+        padding: 9.455px 39.001px 9.5px 39.999px;
+        column-gap: 8px;
+
+        margin: 7px auto;
+        border-radius: 50px;
+        background: $color-12;
+        cursor: pointer;
+        .with {
+          color: $color-7;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        img {
+          width: 72px;
+          height: 18px;
+        }
+      }
+
+      // ==pop-Cart ==
+    }
+  }
+}
+
+.transtop {
+  animation: hid forwards 400ms;
+}
+.transin {
+  animation: in forwards 400ms;
+}
+
+@keyframes hid {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  99% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+}
+@keyframes in {
+  0% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

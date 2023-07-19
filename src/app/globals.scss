@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.display-block {
+  display: block !important;
+}
+.display-none {
+  display: none !important;
+}
+.display-flex {
+  display: flex !important;
+}
+// import fonts
+
+/* Poppins Light - وزن الخط الخفيف */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Poppins Regular - وزن الخط العادي */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Poppins Medium - وزن الخط المتوسط */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Poppins Semi-Bold - وزن الخط شبه الجريء */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Poppins Bold - وزن الخط الجريء */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Poppins Extra-Bold - وزن الخط الجريء جدًا */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins/Poppins-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Poppins Black - وزن الخط الأسود */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}

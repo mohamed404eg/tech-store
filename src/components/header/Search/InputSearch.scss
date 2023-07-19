@@ -1,0 +1,30 @@
+@use "../../../scss/_variables/variables" as *;
+@use "../../../scss/mixin/mixin" as *;
+
+.InputSearch {
+  display: none;
+  width: calc(100% - 25px);
+  margin-right: 25px;
+  & > div {
+    width: inherit;
+    height: 60px;
+    border-radius: 31px;
+    background: $Color-1;
+    position: relative;
+    @include flex(row, center, center);
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: inherit;
+    padding: 0 30px;
+    border: none;
+    outline: none;
+  }
+  img {
+    position: absolute;
+    right: 26px;
+    cursor: pointer;
+  }
+}
