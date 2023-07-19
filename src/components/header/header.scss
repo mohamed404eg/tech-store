@@ -132,7 +132,7 @@
     background: $color-3;
 
     @include trans();
-    span {
+    .LaptopsText {
       color: $color-11;
       text-align: center;
       font-size: 14px;
@@ -228,9 +228,8 @@
     width: 232px;
     height: 189.368px;
     background-color: #cacdd8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(column, center , center);
+
 
     .shape-inst {
       clip-path: polygon(
@@ -245,10 +244,9 @@
       width: 230px;
       height: 186.368px;
       background-color: #ffffff;
+      @include flex(column, center );
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+     
       column-gap: 19px;
       a:first-child {
         margin-top: 29px;

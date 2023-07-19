@@ -55,5 +55,35 @@
       opacity: 1;
     }
   }
-  
+}
+
+
+/**
+ * b-w mixin
+ * ------------
+ * Sets the flex-basis and max-width properties with the passed values.
+ *
+ * Usage:
+ * ------
+ * .element {
+ *   @include b-w(50%, 500px);
+ * }
+ *
+ * Output:
+ * -------
+ * .element {
+ *   flex-basis: 50%;
+ *   max-width: 500px;
+ * }
+ *
+ * @param {length} $b - Optional. The flex-basis value. Default is 100%.
+ * @param {length} $w - Optional. The max-width value. Default is 100%.
+ */
+ @mixin b-w($b: 100%, $w: 100%) {
+  flex-basis: $b;
+  max-width: $w;
+}
+@mixin b-w($b: 100%, $w: 100%) {
+  flex-basis: $b;
+  max-width: $w;
 }

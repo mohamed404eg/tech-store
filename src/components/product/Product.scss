@@ -1,0 +1,142 @@
+@use "../../scss/mixin/mixin" as *;
+@use "../../scss/_variables/variables" as *;
+
+.Product {
+  display: flex;
+  padding: 0px 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 185px;
+  height: 319px + 50px;
+  position: relative;
+
+  //   border: 1px solid $color-6;
+  background: #fff;
+  text-decoration: none;
+
+  //   Hover
+  .AddToCart,
+  .Hover-action {
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+  &:hover {
+    width: 234px;
+    height: 400px + 50px;
+    padding-bottom: 17px;
+    /* Shadow 1 */
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.14);
+    .Hover-action {
+      position: absolute;
+      right: 12.5px;
+      top: 16px;
+
+      @include flex(column, center);
+      row-gap: 5px;
+    }
+    .AddToCart {
+      @include flex($align: center);
+      padding: 8px 20px;
+
+      gap: 10px;
+      border-radius: 50px;
+      border: 2px solid $color-3;
+      background-color: $color-11;
+      margin: auto;
+      width: 160px;
+      height: 37px;
+      cursor: pointer;
+      span {
+        color: $color-3;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      img {
+        width: 18.717px;
+        height: 16.667px;
+      }
+    }
+  }
+
+  .images {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+
+    @include flex();
+
+    img {
+      position: absolute;
+      max-width: 150px;
+      height: 150px;
+    }
+
+    & img:last-child {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+    & img:last-child:hover {
+      opacity: 0;
+    }
+  }
+
+  .desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $color-7;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .price {
+    @include flex(column);
+    column-gap: 9.5px;
+    height: 60px;
+    & span:first-child {
+      color: $color-10;
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 19.6px */
+      text-decoration-line: line-through;
+    }
+    & span:last-child {
+      color: $color-7;
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+    }
+  }
+
+  .stock {
+    @include flex(row, $align: center);
+
+    column-gap: 2px;
+    span {
+      color: $color-9;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 210%; /* 21px */
+    }
+    img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

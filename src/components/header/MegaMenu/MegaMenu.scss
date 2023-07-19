@@ -1,3 +1,5 @@
+@use "../../../scss/mixin/mixin" as *;
+@use "../../../scss/_variables/variables" as *;
 .MegaMenu {
   width: 100vw;
   height: 100vh;
@@ -10,16 +12,68 @@
   top: 0;
   bottom: 0;
   right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+
+  @include flex(row, center, flex-start);
+
+  z-index: 10;
 }
 
 .content-MegaMenu {
   margin-top: 20px;
   width: 100%;
   height: 543px;
-  border: 1px solid var(--color-6, #cacdd8);
+  border: 1px solid $color-6;
   background: #fff;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+
+  .content-one {
+    width: 100%;
+    height: 395px;
+    @include flex(row);
+    border-collapse: collapse;
+    .list {
+      @include b-w(34%, 34%);
+      column-gap: 22px;
+
+      div {
+        color: #000;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        height: 44px;
+        @include flex(row, flex-start, center);
+        padding-left: 29px;
+
+        &:hover {
+          background-color: $color-1;
+        }
+        &:first-child {
+          padding-top: 10px;
+        }
+      }
+      border-right: 1px solid $color-6;
+      .arrow {
+        @include flex(row, flex-end, center);
+        width: 2px;
+        height: 4.268px;
+        position: relative;
+        margin-right: 23px;
+        margin-left: auto;
+      }
+    }
+    .ListProduct {
+      @include b-w(66%, 66%);
+
+      @include flex(row, space-evenly, flex-start);
+    }
+  }
+
+  .content-tow {
+    width: 100%;
+    height: 149.484px;
+  }
+  .list {
+  }
 }
