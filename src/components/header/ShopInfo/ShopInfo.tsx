@@ -13,7 +13,9 @@ import bx_bx_time_loction from "../../../../public/images/time/bx_bx-time-loctio
 function ShopInfo() {
   const [hidden, sethidden] = React.useState(true);
   const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement | HTMLButtonElement | HTMLImageElement>
+    event: React.MouseEvent<
+      HTMLButtonElement | HTMLButtonElement | HTMLImageElement
+    >
   ) => {
     sethidden((e) => !e);
   };
@@ -30,7 +32,7 @@ function ShopInfo() {
   });
 
   return (
-    <>
+    <div className="h-t-time-open">
       <span ref={btn} onClick={handleClick} className="h-t-time-open-text">
         Mon-Thu: 9:00 AM - 5:30 PM
       </span>
@@ -84,7 +86,7 @@ function ShopInfo() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

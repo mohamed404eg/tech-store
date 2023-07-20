@@ -1,21 +1,28 @@
 $responsive-breakpoints: (
   sm: 540px,
-  md: 720px,
+  md: 768px,
   lg: 960px,
   xl: 1140px,
   xxl: 1320px,
 );
+$responsive-breakpoints-min: (
+  sm: 541px,
+  md: 769px,
+  lg: 961px,
+  xl: 1141px,
+  xxl: 1321px,
+);
 
 // color
-$color-1: #F5F7FF;
-$Color-2: #0074BE;
-$color-3: #0156FF;
-$Color-4: #01A4FF;
+$color-1: #f5f7ff;
+$Color-2: #0074be;
+$color-3: #0156ff;
+$Color-4: #01a4ff;
 $color-5: #a2a6b0;
-$color-6: #CACDD8;
+$color-6: #cacdd8;
 $color-7: #000000;
-$color-8: #C94D3F;
-$color-9: #78A962;
+$color-8: #c94d3f;
+$color-9: #78a962;
 $color-10: #666666;
-$color-11: #FFF;
+$color-11: #fff;
 $color-12: #ffb800;

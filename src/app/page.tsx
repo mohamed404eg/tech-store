@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       {<Header />}
-      {<Product />}
+   
     </div>
   );
 }

@@ -14,7 +14,7 @@
   .time-open {
     background-color: #020202;
     width: 262px;
-    height: 254px;
+    height: 254px + 20px;
     position: absolute;
     left: 11px;
     top: 32px;
@@ -31,7 +31,7 @@
   .shape-inst {
     clip-path: polygon(0 100%, 100% 100%, 100% 5%, 18% 4%, 15% 0, 12% 4%, 0 4%);
     width: 262px - 2px;
-    height: 208px;
+    height: 208px + 20px;
     background-color: #ffffff;
 
     display: flex;

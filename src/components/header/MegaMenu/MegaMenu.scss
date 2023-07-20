@@ -67,13 +67,57 @@
       @include b-w(66%, 66%);
 
       @include flex(row, space-evenly, flex-start);
+
+      .SubCategory {
+        height: 100%;
+      }
+
+      .SubCategory2 {
+        color: $color-7;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 307%; /* 42.98px */
+        .count {
+          color: $color-5;
+          font-family: Poppins;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 307%;
+          margin-left: 2px;
+        }
+        height: 100%;
+      }
+      @include responsive(xl) {
+        & a:last-child {
+          display: none;
+        }
+      }
     }
   }
 
   .content-tow {
     width: 100%;
     height: 149.484px;
-  }
-  .list {
+    border-top: 1px solid $color-6;
+    @include flex(row, space-evenly, center);
+    a {
+      padding: 1px;
+      @include flex(row, center, center);
+      width: 100%;
+      height: 100%;
+      transition: ease-out 300ms all;
+      &:hover {
+        background: $color-1;
+      }
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      max-width: 152.717px;
+      max-height: 79.484px;
+    }
   }
 }

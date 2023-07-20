@@ -1,0 +1,51 @@
+@use "../../scss/mixin/mixin" as *;
+@use "../../scss/_variables/variables" as *;
+.HeaderMobile {
+  height: inherit;
+  width: 100%;
+
+  .HeaderMobile-top {
+    background: #020202;
+    height: 40px;
+    @include flex(row, $align: center);
+    .HeaderMobile-Logo {
+      @include flex(row, center, center);
+      margin-left: 29px;
+      width: 64px;
+      height: 49.655px;
+      margin-top: 6px;
+      img {
+        position: absolute;
+        margin-top: 9px;
+        &:first-child {
+          z-index: 2;
+        }
+      }
+    }
+
+    .ShopInfo-time {
+      margin-left: 26px;
+    }
+    .HeaderMobile-ContactUs {
+      color: $color-11;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      position: absolute;
+      right: 26px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -4.5px;
+        height: 1.2px;
+        background-color: $color-11;
+        width: 100%;
+      }
+    }
+  }
+}

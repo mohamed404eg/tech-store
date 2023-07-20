@@ -1,16 +1,46 @@
-@use "../_variables/variables";
+@use "../_variables/variables" as *;
 
-@mixin responsive($responsive-breakpoints) {
+/**
+ * $responsive-breakpoint $min mixin
+ * ------------
+ * $responsive-breakpoint: The name of the specified breakpoint, as defined in the map.
+ * $min: An optional value that sets the minimum width of the media query. The default value is "max".
+ *
+ * Usage:
+ * ------
+ * .element {
+ *   @include responsive(md,  min) 
+ * }
+ *
+ * Output:
+ * -------
+ * @media (max-width: 768px) {
+ * .element {
+ *  
+ * }
+ * }
+ *
+ */
+@mixin responsive($responsive-breakpoint, $min: max) {
   // If the breakpoint exists in the map.
-  @if map-has-key($responsive-breakpoints, $breakpoint) {
+  @if map-has-key($responsive-breakpoints, $responsive-breakpoint) {
     // Get the breakpoint value.
-    $breakpoint-value: map-get($responsive-breakpoints, $breakpoint);
+    $breakpoint-value: map-get($responsive-breakpoints, $responsive-breakpoint);
 
     // Write the media query.
-    @media (min-width: $breakpoint-value) {
-      @content;
+    @if $min == min {
+      $breakpoint-value: map-get(
+        $responsive-breakpoints-min,
+        $responsive-breakpoint
+      );
+      @media (#{$min}-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @media (#{$min}-width: $breakpoint-value) {
+        @content;
+      }
     }
-
     // If the breakpoint doesn't exist in the map.
   } @else {
     // Log a warning.
@@ -57,7 +87,6 @@
   }
 }
 
-
 /**
  * b-w mixin
  * ------------
@@ -79,7 +108,7 @@
  * @param {length} $b - Optional. The flex-basis value. Default is 100%.
  * @param {length} $w - Optional. The max-width value. Default is 100%.
  */
- @mixin b-w($b: 100%, $w: 100%) {
+@mixin b-w($b: 100%, $w: 100%) {
   flex-basis: $b;
   max-width: $w;
 }

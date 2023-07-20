@@ -54,6 +54,10 @@ function Cart() {
             hidden ? " pop-Cart display-none CartElem" : " pop-Cart CartElem "
           }
         >
+          {" "}
+          <div className="triangle">
+            <div className="inner-triangle"></div>
+          </div>
           <p className="MyCart CartElem">My Cart</p>
           <p className="numItem CartElem">2 item in cart</p>
           <button className="goCart ">
@@ -105,14 +109,11 @@ function Cart() {
             </div>
           </div>
           {/* ==product== */}
-
           <span className="line"></span>
-
           <div className="Subtotal">
             <span className="Subtotal-1">Subtotal:</span>
             <span className="Subtotal-2"> $499.00</span>
           </div>
-
           <button className="GoCheckout">Go to Checkout</button>
           <button className="GoCheckoutPaypal">
             <span className="with">Check out with</span>

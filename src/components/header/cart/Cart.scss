@@ -54,16 +54,32 @@
       right: -31px;
       padding-top: 23px;
       text-align: center;
-      &::before {
-        content: "";
+
+      .triangle {
         position: absolute;
-        top: -30px;
+        top: -22px;
         left: 84%;
         transform: translateX(-30%);
-        border: 15px transparent solid;
-
-        border-bottom-color: $color-6;
+        width: 0;
+        height: 0;
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid $color-6;
+        border-right: 11px solid transparent;
+        border-left: 11px solid transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+
+      .inner-triangle {
+        padding-top: 2px;
+        position: relative;
+        border-top: 9px solid transparent;
+        border-bottom: 9px solid $color-11;
+        border-right: 9px solid transparent;
+        border-left: 9px solid transparent;
+      }
+
       .MyCart {
         color: #000;
         text-align: center;
@@ -110,7 +126,6 @@
           font-weight: 600;
           line-height: normal;
           text-decoration: none;
-          padding: 8px 48.5px;
         }
       }
 
@@ -213,8 +228,9 @@
         font-weight: 600;
         line-height: normal;
         margin-top: 13.21px;
-        padding: 8px 70px;
         cursor: pointer;
+        height: 37px;
+        border: none;
       }
       .GoCheckoutPaypal {
         width: calc(100% - 60px);
@@ -227,6 +243,8 @@
         margin: 7px auto;
         border-radius: 50px;
         background: $color-12;
+        height: 37px;
+        border: none;
         cursor: pointer;
         .with {
           color: $color-7;

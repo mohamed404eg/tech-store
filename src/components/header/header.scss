@@ -7,6 +7,19 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  .header-lg {
+    height: 92px;
+    @include responsive(md) {
+      display: none;
+    }
+  }
+  .header-md {
+    height: 92px;
+    @include responsive(md, min) {
+      display: none;
+    }
+  }
 }
 
 .header-top {
@@ -52,6 +65,9 @@
 
     padding-bottom: 5.5px;
   }
+  @include responsive(lg) {
+    display: none;
+  }
 }
 
 .h-t-call {
@@ -63,6 +79,11 @@
   line-height: normal;
   @include flex($direction: row, $align: center);
   column-gap: 8px;
+  @include responsive(md) {
+    & {
+      display: none;
+    }
+  }
 }
 .h-t-call-media {
   @include flex($direction: row);
@@ -80,7 +101,14 @@
   ul {
     @include flex(row, space-between, center);
     column-gap: 25px;
-
+    @include responsive(xl) {
+      padding-left: 0;
+    }
+    @include responsive(md) {
+      & {
+        display: none;
+      }
+    }
     li {
       cursor: pointer;
       list-style: none;
@@ -92,6 +120,15 @@
       font-style: normal;
       font-weight: 600;
       line-height: normal;
+      @include responsive(xl) {
+        font-size: 13px;
+      }
+      @include responsive(lg) {
+        &:nth-child(7) {
+          display: none;
+        }
+      }
+
       a {
         color: $color-7;
         text-align: center;
@@ -111,6 +148,12 @@
       border-radius: 50px;
       border: 2px solid $color-3;
       max-height: 69px;
+      @include responsive(xl) {
+        padding: 4px 20px;
+      }
+      @include responsive(lg) {
+        display: none;
+      }
       a {
         color: $color-3;
         text-align: center;
@@ -143,56 +186,17 @@
     }
   }
 
-  .client {
-    @include flex(row, center, center);
-    column-gap: 25px;
-    height: 92px;
-    img {
-      cursor: pointer;
-    }
-    .cart {
-      position: relative;
-      width: 25px;
-      height: 25px;
-    }
-    .Personal {
-      width: 36px;
-      height: 36px;
-      border-radius: 36px;
-    }
-
-    .pop-Cart {
-      border: 1px solid $color-6;
-      width: 310px;
-      height: 520.533px;
-      background: $color-11;
-
-      position: absolute;
-      right: -31px;
-      &::before {
-        content: "";
-        position: absolute;
-        top: -30px;
-        left: 84%;
-        transform: translateX(-30%);
-        border: 15px transparent solid;
-
-        border-bottom-color: $color-6;
-      }
-      .MyCart {
-        color: #000;
-        text-align: center;
-        font-family: Poppins;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 140%; /* 25.2px */
-      }
-    }
-  }
-
   .div-search {
     display: none;
+  }
+
+  .client {
+    .clientImg {
+      cursor: pointer;
+      @include responsive(xl) {
+        margin-left: 5px;
+      }
+    }
   }
 }
 .transtop {
@@ -228,8 +232,7 @@
     width: 232px;
     height: 189.368px;
     background-color: #cacdd8;
-    @include flex(column, center , center);
-
+    @include flex(column, center, center);
 
     .shape-inst {
       clip-path: polygon(
@@ -244,9 +247,8 @@
       width: 230px;
       height: 186.368px;
       background-color: #ffffff;
-      @include flex(column, center );
+      @include flex(column, center);
 
-     
       column-gap: 19px;
       a:first-child {
         margin-top: 29px;
