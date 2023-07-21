@@ -9,8 +9,9 @@ import Image from "next/image";
 import arrowbottom from "../../../../public/images/header/arrow-bottom.svg";
 import bx_bx_time from "../../../../public/images/time/bx_bx-time.svg";
 import bx_bx_time_loction from "../../../../public/images/time/bx_bx-time-loction.svg";
-
-function ShopInfo() {
+// mobile
+import bx_bx_time_mobile from "../../../../public/images/time/bx_bx_time_mobile.svg";
+function ShopInfo({ isMobile }: { isMobile: boolean | false }) {
   const [hidden, sethidden] = React.useState(true);
   const handleClick = (
     event: React.MouseEvent<
@@ -45,7 +46,10 @@ function ShopInfo() {
           <div className="open">
             <div>
               {" "}
-              <Image src={bx_bx_time} alt="bx_bx-time" />{" "}
+              <Image
+                src={isMobile ? bx_bx_time_mobile : bx_bx_time}
+                alt="bx_bx-time"
+              />{" "}
             </div>
             <div className="allDay">
               <div className="WeAre">We are open:</div>

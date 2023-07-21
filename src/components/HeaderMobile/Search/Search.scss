@@ -1,0 +1,32 @@
+@use "../../../scss/mixin/mixin" as *;
+@use "../../../scss/_variables/variables" as *;
+.mobile-Search {
+  flex-basis: 67.45%;
+  max-width: 67.45%;
+  border-radius: 25px;
+  background: #fff;
+  @include flex(row, space-around, center);
+  position: relative;
+  margin-left: 53px;
+  input {
+    height: 38px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-left: 38px;
+    border-radius: inherit;
+    &::placeholder {
+      color: $color-6;
+      font-family: Poppins;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  img {
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+  }
+}

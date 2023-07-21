@@ -35,19 +35,21 @@ function Cart() {
   return (
     <>
       <div className="CartElem">
+        {/*  */}
         <div
           className="icon-num CartElem"
           onClick={() => {
             sethidden((e) => !e);
           }}
-        >
+          >
           <Image
             src={jam_shopping_cart}
             alt="jam_shopping_cart"
             className="CartElem"
-          />
+            />
           <span className="CartElem"> 3</span>
         </div>
+            {/*  */}
 
         <div
           className={

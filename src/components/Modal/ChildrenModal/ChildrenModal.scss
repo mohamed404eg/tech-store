@@ -1,0 +1,30 @@
+@use "../../../scss/_variables/variables" as *;
+.ChildrenModal-Popover {
+  min-width: 100px;
+  min-height: 100px;
+  position: relative;
+ & div {
+    z-index: 2;
+ }
+}
+.css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+  overflow-x: unset;
+  overflow-y: unset;
+  border: 1px solid $color-6;
+  border-radius: 0;
+
+  .triangle {
+    background-color: $color-11;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 14px;
+    top: -4px;
+    transform: rotate(45deg);
+    left: calc(70% - 6px);
+    border: 1px solid $color-6;
+    z-index: -2;
+    border-radius: 3px;
+  }
+}

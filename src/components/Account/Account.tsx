@@ -3,11 +3,18 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Personal from "../../../public/images/header/Personal.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-function Account() {
+// images
+import Personal from "../../../public/images/header/Personal.svg";
+import iconMobile from "../../../public/images/HeaderMobile/iconMobile.svg";
+
+function Account({
+  isImage = true,
+}: {
+  isImage?: boolean | true;
+}): React.JSX.Element {
   const [hidden, sethidden] = React.useState(true);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     sethidden((e) => !e);
@@ -24,10 +31,17 @@ function Account() {
     });
   });
 
+  console.log(isImage);
+
   return (
     <div style={{ position: "relative" }} className="Account-Personal">
       <Button id="basic-button" aria-haspopup="true" onClick={handleClick}>
-        <Image ref={btn} className="Personal" src={Personal} alt="Personal" />
+        <Image
+          ref={btn}
+          className="Personal"
+          src={isImage ? Personal : iconMobile}
+          alt="Personal"
+        />
       </Button>
       <div
         className={hidden ? " Personal-list display-none " : " Personal-list  "}

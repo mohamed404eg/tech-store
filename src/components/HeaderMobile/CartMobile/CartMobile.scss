@@ -1,0 +1,21 @@
+@use "../../../scss/mixin/mixin" as *;
+@use "../../../scss/_variables/variables" as *;
+.CartMobile {
+  @include flex(row, $align: center);
+  position: relative;
+  span {
+    position: absolute;
+    width: 17.419px;
+    height: 17.419px;
+    border-radius: 8px;
+    background-color: $color-11;
+    top: -6px;
+    right: -8.78px;
+    @include flex(row, center, center);
+  }
+}
+
+[data-classname="ChildrenModal-Popover"] {
+  width: 310px;
+  height: 511px;
+}

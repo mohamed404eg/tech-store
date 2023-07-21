@@ -9,15 +9,15 @@
     height: 40px;
     @include flex(row, $align: center);
     .HeaderMobile-Logo {
-      @include flex(row, center, center);
+      @include flex(row, center);
       margin-left: 29px;
       width: 64px;
       height: 49.655px;
-      margin-top: 6px;
       img {
+        margin-top: 11px;
         position: absolute;
-        margin-top: 9px;
         &:first-child {
+          margin-top: 16px;
           z-index: 2;
         }
       }
@@ -25,6 +25,18 @@
 
     .ShopInfo-time {
       margin-left: 26px;
+      .time-open {
+        width: 283px;
+        height: 233.315px;
+        .allDay {
+          margin-bottom: 14px;
+        }
+      }
+
+      .shape-inst {
+        width: 283px - 2px;
+        height: 233.315px + 20px;
+      }
     }
     .HeaderMobile-ContactUs {
       color: $color-11;
@@ -46,6 +58,22 @@
         background-color: $color-11;
         width: 100%;
       }
+    }
+  }
+
+  .HeaderMobile-bottom {
+    height: 64px;
+    background: $color-3;
+    @include flex(row, $align: center);
+    .HeaderMobile-Menu {
+      margin-left: 26px;
+      cursor: pointer;
+    }
+
+    .Cart-Account {
+      @include flex(row, $align: center);
+      margin-left: 35px;
+      column-gap: 20px;
     }
   }
 }
