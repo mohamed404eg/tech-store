@@ -48,6 +48,7 @@ export default function ChildrenModal({
           horizontal: "left",
         }}
         data-classname="MuiPopover"
+        sx={{ top: "19px" }}
       >
         <div className="triangle"></div>
         <div

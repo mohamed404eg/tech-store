@@ -3,14 +3,14 @@
   min-width: 100px;
   min-height: 100px;
   position: relative;
- & div {
+  & div {
     z-index: 2;
- }
+  }
 }
 .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
   overflow-x: unset;
   overflow-y: unset;
-  border: 1px solid $color-6;
+  border: 0.5px solid $color-6;
   border-radius: 0;
 
   .triangle {
@@ -23,8 +23,21 @@
     top: -4px;
     transform: rotate(45deg);
     left: calc(70% - 6px);
-    border: 1px solid $color-6;
+    border-left: 1px solid $color-6;
     z-index: -2;
     border-radius: 3px;
+    clip-path: polygon(0% 0%, 100% 0%, 32% 57%, 0% 112%);
+  }
+  @keyframes triangleKey {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+      z-index: -1;
+    }
   }
 }

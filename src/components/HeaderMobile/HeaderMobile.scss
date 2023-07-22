@@ -25,9 +25,27 @@
 
     .ShopInfo-time {
       margin-left: 26px;
+      @include responsive(xsm) {
+        margin-left: 20px;
+        .h-t-time-open-text {
+          color: $color-5;
+          font-family: Poppins;
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+
+      .h-t-time-open-text {
+        color: $color-5;
+        & span:last-child {
+          color: $color-11;
+        }
+      }
       .time-open {
         width: 283px;
-        height: 233.315px;
+        height: 233.315px + 40px;
         .allDay {
           margin-bottom: 14px;
         }
@@ -35,7 +53,19 @@
 
       .shape-inst {
         width: 283px - 2px;
-        height: 233.315px + 20px;
+        height: 228.315px;
+      }
+      .Address-div {
+        padding: 11px 0 10px 29px;
+
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 18.2px */
+      }
+
+      .open {
+        padding-left: 29px;
       }
     }
     .HeaderMobile-ContactUs {

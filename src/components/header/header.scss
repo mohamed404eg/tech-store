@@ -165,40 +165,47 @@
       }
     }
   }
-
-  .Laptops {
-    width: 96px;
-    height: 37px;
-  }
-  .Laptops:hover {
-    border-radius: 100px;
-    background: $color-3;
-
-    @include trans();
-    .LaptopsText {
-      color: $color-11;
-      text-align: center;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-      @include trans();
-    }
-  }
-
-  .div-search {
-    display: none;
-  }
-
   .client {
+    @include flex(row, space-between, center);
     .clientImg {
       cursor: pointer;
       @include responsive(xl) {
         margin-left: 5px;
       }
     }
+    .Account-Personal {
+      margin-left: 36px;
+    }
+    .cart {
+      margin-left: 25px;
+    }
   }
 }
+
+.Laptops {
+  width: 96px;
+  height: 37px;
+}
+.Laptops:hover {
+  border-radius: 100px;
+  background: $color-3;
+
+  @include trans();
+  .LaptopsText {
+    color: $color-11;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include trans();
+  }
+}
+
+.div-search {
+  display: none;
+}
+
 .transtop {
   animation: hid forwards 400ms;
 }

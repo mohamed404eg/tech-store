@@ -31,7 +31,7 @@ function Account({
     });
   });
 
-  console.log(isImage);
+
 
   return (
     <div style={{ position: "relative" }} className="Account-Personal">

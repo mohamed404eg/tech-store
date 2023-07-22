@@ -11,6 +11,7 @@ import bx_bx_time from "../../../../public/images/time/bx_bx-time.svg";
 import bx_bx_time_loction from "../../../../public/images/time/bx_bx-time-loction.svg";
 // mobile
 import bx_bx_time_mobile from "../../../../public/images/time/bx_bx_time_mobile.svg";
+import bx_bx_time_loction_mobile from "../../../../public/images/time/bx_bx_time_loction_mobile.svg";
 function ShopInfo({ isMobile }: { isMobile: boolean | false }) {
   const [hidden, sethidden] = React.useState(true);
   const handleClick = (
@@ -35,14 +36,36 @@ function ShopInfo({ isMobile }: { isMobile: boolean | false }) {
   return (
     <div className="h-t-time-open">
       <span ref={btn} onClick={handleClick} className="h-t-time-open-text">
-        Mon-Thu: 9:00 AM - 5:30 PM
+        <span> Mon-Thu:</span>
+        <span> 9:00 AM - 5:30 PM</span>
       </span>
 
       <span className="arrowbottom" onClick={handleClick}>
         <Image onClick={handleClick} src={arrowbottom} alt="arrowbottom" />
       </span>
-      <div className={hidden ? "time-open display-none" : "time-open "}>
-        <div className="shape-inst">
+      <div
+        className={hidden ? "time-open display-none" : "time-open "}
+        style={
+          isMobile
+            ? {
+                clipPath:
+                  "polygon(0 100%, 100% 100%, 100% 4%, 87% 4%, 84% 0%, 81% 4%, 0 4%)",
+                left: "-63px",
+              }
+            : {}
+        }
+      >
+        <div
+          className="shape-inst"
+          style={
+            isMobile
+              ? {
+                  clipPath:
+                    "polygon(0 100%, 100% 100%, 100% 4%, 87% 4%, 84% 0%, 81% 4%, 0 4%)",
+                }
+              : {}
+          }
+        >
           <div className="open">
             <div>
               {" "}
@@ -68,10 +91,13 @@ function ShopInfo({ isMobile }: { isMobile: boolean | false }) {
             </div>
           </div>
           <div className="line"></div>
-          <hr />
+
           <div className="Address-div">
             <div>
-              <Image src={bx_bx_time_loction} alt="bx_bx_time_loction" />
+              <Image
+                src={isMobile ? bx_bx_time_loction_mobile : bx_bx_time_loction}
+                alt="bx_bx_time_loction"
+              />
             </div>
             <div className="Address">
               Address: 1234 Street Adress, City Address, 1234
