@@ -26,7 +26,24 @@
     align-items: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.14);
     z-index: 11;
+    @include DTN();
+    // transition close in globals 
   }
+// transition
+.time-open-close {
+  animation: downT-close 400ms ease-in-out both;
+  @keyframes downT-close {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-200%);
+    }
+  }
+}
+
+
   //   .shape-inst
   .shape-inst {
     clip-path: polygon(0 100%, 100% 100%, 100% 5%, 18% 4%, 15% 0, 12% 4%, 0 4%);

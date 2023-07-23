@@ -29,4 +29,8 @@
     left: 15px;
     cursor: pointer;
   }
+
+  @include responsive(xsm){
+    margin-left: 0px;
+  }
 }

@@ -2,8 +2,7 @@
 @use "../../../scss/mixin/mixin" as *;
 
 .InputSearch {
-  display: none;
-  width: calc(100% - 25px);
+  width: 0;
   margin-right: 25px;
   & > div {
     width: inherit;
@@ -26,5 +25,21 @@
     position: absolute;
     right: 26px;
     cursor: pointer;
+  }
+}
+
+// transition
+.SearchTransition {
+  transform-origin: right left;
+  animation: downT-SearchTransition 400ms ease-in-out both;
+  @keyframes downT-SearchTransition {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: calc(100% - 25px);
+
+    }
   }
 }

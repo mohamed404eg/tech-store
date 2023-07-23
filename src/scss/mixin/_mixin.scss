@@ -116,3 +116,35 @@
   flex-basis: $b;
   max-width: $w;
 }
+
+
+/*
+  DTN Mixin
+  ==========
+  This mixin animates an element by sliding it down from off the top of the screen.
+  
+  Usage:
+  ------
+  To use this mixin, simply include it in the selector for the element you want to animate. The
+  default animation duration is 400ms, but you can specify a different duration by passing a
+  value (in milliseconds) to the $t parameter.
+  
+  Example:
+  --------
+  .my-element {
+    @include DTN(500); // Slide down over 500ms
+  }
+*/
+
+@mixin DTN($t: 400) {
+  animation: downT #{$t}ms ease-in-out both;
+  @keyframes downT {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

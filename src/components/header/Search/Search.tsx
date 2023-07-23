@@ -14,8 +14,14 @@ function Search() {
     document
       .querySelector(".header-second-list")
       ?.classList.toggle("display-none");
-      
-    document.querySelector(".InputSearch")?.classList.toggle("display-flex");
+
+    document
+      .querySelector(".InputSearch-img")
+      ?.classList.toggle("display-none");
+
+    document
+      .querySelector(".InputSearch")
+      ?.classList.toggle("SearchTransition");
 
     setOpen((v) => !v);
   }

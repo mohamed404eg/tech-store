@@ -98,12 +98,22 @@
     .HeaderMobile-Menu {
       margin-left: 26px;
       cursor: pointer;
+      @include responsive(xsm) {
+        margin-left: 12px;
+      }
     }
-
+    button {
+      padding-left: 0;
+      justify-content: start;
+      min-width: 26px;
+    }
     .Cart-Account {
       @include flex(row, $align: center);
       margin-left: 35px;
       column-gap: 20px;
+      @include responsive(xsm) {
+        margin-left: 9px;
+      }
     }
   }
 }

@@ -10,6 +10,7 @@ import Link from "next/link";
 import Personal from "../../../public/images/header/Personal.svg";
 import iconMobile from "../../../public/images/HeaderMobile/iconMobile.svg";
 
+import "./Account.scss";
 function Account({
   isImage = true,
 }: {
@@ -31,8 +32,6 @@ function Account({
     });
   });
 
-
-
   return (
     <div style={{ position: "relative" }} className="Account-Personal">
       <Button id="basic-button" aria-haspopup="true" onClick={handleClick}>
@@ -44,7 +43,7 @@ function Account({
         />
       </Button>
       <div
-        className={hidden ? " Personal-list display-none " : " Personal-list  "}
+        className={hidden ? " Personal-list  Personal-list-close" : " Personal-list  "}
       >
         <div className="shape-inst">
           <Link href={""}> My Account</Link>

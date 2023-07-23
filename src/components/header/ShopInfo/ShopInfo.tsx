@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./ShopInfo.scss";
 // next
@@ -12,20 +12,21 @@ import bx_bx_time_loction from "../../../../public/images/time/bx_bx-time-loctio
 // mobile
 import bx_bx_time_mobile from "../../../../public/images/time/bx_bx_time_mobile.svg";
 import bx_bx_time_loction_mobile from "../../../../public/images/time/bx_bx_time_loction_mobile.svg";
-function ShopInfo({ isMobile }: { isMobile: boolean | false }) {
+function ShopInfo({ isMobile = false }: { isMobile?: boolean | false }) {
   const [hidden, sethidden] = React.useState(true);
   const handleClick = (
     event: React.MouseEvent<
       HTMLButtonElement | HTMLButtonElement | HTMLImageElement
     >
   ) => {
-    sethidden((e) => !e);
+    sethidden((a) => (a = !hidden));
   };
 
   const btn = React.useRef(null);
+  const btn2 = React.useRef(null);
   React.useEffect(() => {
-    document.documentElement.addEventListener("click", (event) => {
-      if (event.target !== btn.current) {
+    document.documentElement?.addEventListener("click", (event) => {
+      if (event.target !== btn.current && btn2.current) {
         if (!hidden) {
           sethidden(true);
         }
@@ -35,16 +36,22 @@ function ShopInfo({ isMobile }: { isMobile: boolean | false }) {
 
   return (
     <div className="h-t-time-open">
-      <span ref={btn} onClick={handleClick} className="h-t-time-open-text">
-        <span> Mon-Thu:</span>
-        <span> 9:00 AM - 5:30 PM</span>
+      <span onClick={handleClick} className="h-t-time-open-text">
+        <span onClick={handleClick} ref={btn2}>
+          {" "}
+          Mon-Thu:
+        </span>
+        <span onClick={handleClick} ref={btn}>
+          {" "}
+          9:00 AM - 5:30 PM
+        </span>
       </span>
 
       <span className="arrowbottom" onClick={handleClick}>
         <Image onClick={handleClick} src={arrowbottom} alt="arrowbottom" />
       </span>
       <div
-        className={hidden ? "time-open display-none" : "time-open "}
+        className={hidden ? "time-open time-open-close" : "time-open "}
         style={
           isMobile
             ? {

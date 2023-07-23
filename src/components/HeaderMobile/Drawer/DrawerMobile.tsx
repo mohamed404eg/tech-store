@@ -84,7 +84,7 @@ export default function DrawerMobile({ children }: DrawerProps): JSX.Element {
           }}
         >
           <Box
-            sx={{ width: "56vw" }}
+            sx={{ width: { xs: "90vw", sm: "56vw" } }}
             role="presentation"
             onClick={() => {
               // not active is close Drawer in click any location

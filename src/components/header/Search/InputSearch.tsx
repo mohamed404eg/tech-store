@@ -13,7 +13,7 @@ function InputSearch() {
     <div className="InputSearch">
       <div>
         <input placeholder="Search entiere store here..."></input>
-        <Image src={gg_search} alt="gg_search" />
+        <Image className="InputSearch-img display-none" src={gg_search} alt="gg_search" />
       </div>
     </div>
   );

@@ -2,12 +2,16 @@
 @use "../../scss/_variables/variables" as *;
 
 .header {
-  height: 92px;
+  height: 136px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-
+  border-bottom: 1px solid $color-6;
+  @include responsive(md) {
+    border: none;
+    height: 104px;
+  }
   .header-lg {
     height: 92px;
     @include responsive(md) {
@@ -216,60 +220,5 @@
   }
   100% {
     transform: translateY(-100%);
-  }
-}
-
-.Account-Personal {
-  .Personal-list {
-    background-color: #020202;
-    width: 232px;
-    height: 189.368px;
-    position: absolute;
-    right: 6px;
-    top: 40px;
-    clip-path: polygon(
-      0 100%,
-      100% 100%,
-      100% 14%,
-      93% 14%,
-      88% 4%,
-      82% 14%,
-      0 14%
-    );
-    width: 232px;
-    height: 189.368px;
-    background-color: #cacdd8;
-    @include flex(column, center, center);
-
-    .shape-inst {
-      clip-path: polygon(
-        0 100%,
-        100% 100%,
-        100% 14%,
-        93% 14%,
-        88% 4%,
-        82% 14%,
-        0 14%
-      );
-      width: 230px;
-      height: 186.368px;
-      background-color: #ffffff;
-      @include flex(column, center);
-
-      column-gap: 19px;
-      a:first-child {
-        margin-top: 29px;
-      }
-      a {
-        color: $color-7;
-        font-family: Poppins;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 200%; /* 28px */
-        text-decoration: none;
-        padding-left: 26px;
-      }
-    }
   }
 }

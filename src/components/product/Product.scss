@@ -20,6 +20,7 @@
   .Hover-action {
     display: none;
     transition: opacity 0.5s ease-in-out;
+    z-index: 3;
   }
   &:hover {
     width: 234px;
@@ -122,6 +123,7 @@
   }
 
   .stock {
+   
     @include flex(row, $align: center);
 
     column-gap: 2px;
