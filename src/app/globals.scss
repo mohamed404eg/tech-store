@@ -14,6 +14,12 @@ html {
   @include responsive(xxl) {
     max-width: calc(100% - 40px);
   }
+  @include responsive(sm) {
+    max-width: calc(100% - 30px);
+  }
+  @include responsive(xxs) {
+    max-width: calc(100% - 10px);
+  }
 }
 
 .display-block {

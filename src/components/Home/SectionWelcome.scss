@@ -1,22 +1,49 @@
-.SectionWelcome {
+@use "../../scss/mixin/mixin" as *;
+.SectionWelcomeTop {
   position: relative;
   display: flex;
   align-items: center;
   height: 328px;
   width: 100%;
-  .left {
-    position: absolute;
-    cursor: pointer;
-    left: 0;
-  }
-  .right {
-    position: absolute;
-    cursor: pointer;
 
-    right: 2px;
-  }
   .SectionWelcomeImg {
     width: 100%;
     height: 328px;
+    @include responsive(md) {
+      height: 173px;
+    }
+  }
+
+  .SectionWelcome {
+    display: flex;
+    align-items: center;
+    @include responsive(md) {
+      position: absolute;
+      top: 19px;
+    }
+    .left {
+      position: absolute;
+      cursor: pointer;
+      left: 0;
+      z-index: 2;
+      width: 46px;
+      height: 79px;
+      @include responsive(md) {
+        width: 35px;
+        height: 60px;
+      }
+    }
+    .right {
+      position: absolute;
+      cursor: pointer;
+      right: 2px;
+      z-index: 2;
+      width: 46px;
+      height: 79px;
+      @include responsive(md) {
+        width: 35px;
+        height: 60px;
+      }
+    }
   }
 }

@@ -21,6 +21,10 @@
           z-index: 2;
         }
       }
+
+      @include responsive(xxs) {
+        width: 50px;
+      }
     }
 
     .ShopInfo-time {
@@ -36,7 +40,9 @@
           line-height: normal;
         }
       }
-
+      @include responsive(xxs) {
+        margin-left: 10px;
+      }
       .h-t-time-open-text {
         color: $color-5;
         & span:last-child {

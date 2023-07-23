@@ -13,13 +13,13 @@
     height: 104px;
   }
   .header-lg {
-    height: 92px;
+    height: inherit;
     @include responsive(md) {
       display: none;
     }
   }
   .header-md {
-    height: 92px;
+    height: inherit;
     @include responsive(md, min) {
       display: none;
     }

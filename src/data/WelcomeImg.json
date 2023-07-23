@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "url": "../../public/images/Home/SectionWelcome/SectionWelcomeImg.jpg",
+        "url728px": "../../public/images/Home/SectionWelcome728px.png",
+        "url375px": "../../public/images/Home/SectionWelcome/SectionWelcome375px.png",
+        "Primary": true
+    },
+    {
+        "id": 2,
+        "url": "../../public/images/Home/SectionWelcome/SectionWelcomeImg2.jpg"
+    },
+    {
+        "id": 3,
+        "url": "../../public/images/Home/SectionWelcome/SectionWelcomeImg3.jpg"
+    },
+    {
+        "id": 4,
+        "url": "../../public/images/Home/SectionWelcome/SectionWelcomeImg4.jpg"
+    }
+]
