@@ -1,0 +1,106 @@
+@use "../../../scss/_variables/variables" as *;
+@use "../../../scss/mixin/mixin" as *;
+.HomeAds {
+  height: 70px;
+  width: 100%;
+  background-color: $color-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  @include responsive(md) {
+    height: 60px;
+  }
+  @include responsive(xsm) {
+    height: 103px;
+  }
+}
+
+.HomeAdsContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include responsive(xsm) {
+    flex-direction: column;
+  }
+  .line {
+    background-color: #00aeb8;
+    height: 23px;
+    width: 2px;
+    margin: auto 11.5px auto 14.5px;
+    @include responsive(xsm) {
+      display: none;
+    }
+  }
+  img {
+    width: 77px;
+    height: 27px;
+    @include responsive(xsm) {
+      width: 37px;
+      height: 13px;
+      margin-top: 15px;
+    }
+    @include responsive(md) {
+      width: 47.571px;
+      height: 16.714px;
+    }
+  }
+  p span:first-child {
+    color: #272560;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120.5%; /* 21.69px */
+    @include responsive(md) {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120.5%; /* 16.87px */
+    }
+    @include responsive(xsm) {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120.5%; /* 14.46px */
+    }
+  }
+  p span:nth-child(2) {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120.5%;
+    @include responsive(md) {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120.5%; /* 14.46px */
+      margin-right: 12px;
+    }
+    @include responsive(xsm) {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120.5%;
+    }
+  }
+  p a {
+    color: #272560;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120.5%;
+    text-decoration: underline;
+    @include responsive(xsm) {
+      display: block;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120.5%; /* 16.87px */
+      text-decoration-line: underline;
+      margin-top: 11px;
+      text-align: center;
+    }
+  }
+}

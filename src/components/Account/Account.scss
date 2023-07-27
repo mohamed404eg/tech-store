@@ -2,7 +2,6 @@
 @use "../../scss/_variables/variables" as *;
 .Account-Personal {
   .Personal-list {
- 
     width: 232px;
     height: 189.368px;
     position: absolute;
@@ -19,10 +18,10 @@
     );
     width: 232px;
     height: 189.368px;
-
+    z-index: 30;
     @include flex(column, center, center);
 
-    animation: colorPersonallist ease 400ms forwards ;
+    animation: colorPersonallist ease 400ms forwards;
     // transition close in globals
     @keyframes colorPersonallist {
       0% {

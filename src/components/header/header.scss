@@ -127,11 +127,18 @@
       @include responsive(xl) {
         font-size: 13px;
       }
+
       @include responsive(lg) {
         &:nth-child(7) {
           display: none;
         }
       }
+      @include responsive(lg) {
+        &:nth-child(6) {
+          display: none;
+        }
+      }
+
 
       a {
         color: $color-7;

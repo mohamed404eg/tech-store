@@ -20,6 +20,10 @@ html {
   @include responsive(xxs) {
     max-width: calc(100% - 10px);
   }
+// min
+  @include responsive(xxl , min) {
+    max-width: calc(100% - 40px);
+  }
 }
 
 .display-block {

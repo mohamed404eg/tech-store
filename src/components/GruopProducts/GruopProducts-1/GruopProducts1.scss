@@ -1,0 +1,119 @@
+@use "../../../scss/_variables/variables" as *;
+
+.GruopProducts1-list {
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 25px;
+    li {
+      list-style: none;
+    }
+    li a {
+      color: #838383;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%; /* 22.4px */
+      text-decoration: none;
+    }
+    .GruopProducts1-li-0 {
+      a {
+        color: $color-7;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; /* 22.4px */
+        position: relative;
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          bottom: -3px;
+          width: 100%;
+          height: 3px;
+          background-color: $color-3;
+        }
+      }
+    }
+  }
+}
+.GruopProducts1 {
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  justify-content: space-around;
+}
+
+.GruopProducts1Logo {
+  flex-basis: 233px;
+  max-width: 233px;
+  height: 350px;
+  background-image: url("../../../../public/images/Home/GruopProducts/GruopProducts1/GruopProducts1Logo.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  .GruopProducts1-title {
+    color: $color-11;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 28.6px */
+    text-align: center;
+    width: 100%;
+  }
+  a {
+    color: $color-11;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%; /* 14.95px */
+    text-decoration-line: underline;
+    text-align: center;
+    bottom: 31px;
+    position: absolute;
+  }
+}
+.GruopProducts1ALL {
+  flex-basis: 80%;
+  max-width: 80%;
+  height: 346px;
+  display: flex;
+  justify-content: flex-end;
+
+  .newAllProducts {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: auto;
+    height: 450px;
+
+    .Product {
+      height: 346px;
+      width: 235px;
+      &:hover {
+        height: 400px;
+      }
+      .MyRating {
+        margin-top: 10px;
+      }
+      .desc {
+        margin: 6px 0 0 0;
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}

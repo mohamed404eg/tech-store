@@ -33,35 +33,34 @@ function SectionWelcome() {
               className="SectionWelcomeImg"
             />
           </picture> */}
+          <div className="WelcomeImgAll">
+            {images.map((data) => {
+              return (
+                <>
+                  <picture
+                    key={data.id}
+                    className={
+                      data?.Primary
+                        ? "WelcomeImgPrimary"
+                        : "WelcomeImgPrimaryNone"
+                    }
+                  >
+                    {}
+                    <source media="(max-width: 728px)" srcSet={`${data.url}`} />
+                    <source media="(max-width: 375px)" srcSet={`${data.url}`} />
 
-          {images.map((data) => {
-            return (
-              <>
-                <picture
-                  key={data.id}
-                  className={data?.Primary ? "WelcomeImgPrimary" : ""}
-                >
-                  {}
-                  <source
-                    media="(max-width: 728px)"
-                    srcSet={`${data?.url728px || data.url}`}
-                  />
-                  <source
-                    media="(max-width: 375px)"
-                    srcSet={`${data?.url728px || data.url}`}
-                  />
-
-                  <Image
-                    src={data.url}
-                    alt="img"
-                    className="SectionWelcomeImg"
-                    width={100}
-                    height={100}
-                  />
-                </picture>
-              </>
-            );
-          })}
+                    <Image
+                      src={data.url}
+                      alt="img"
+                      className="SectionWelcomeImg"
+                      width={1398}
+                      height={100}
+                    />
+                  </picture>
+                </>
+              );
+            })}
+          </div>
           <Arrow x="right" />
         </div>
       </div>
