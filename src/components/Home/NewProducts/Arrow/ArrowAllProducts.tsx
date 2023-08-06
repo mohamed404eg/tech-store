@@ -11,14 +11,15 @@ type ArrowType = {
 import ArrowLeft from "../../../../../public/images/ArrowAllProducts/ArrowLeft.svg";
 import ArrowRight from "../../../../../public/images/ArrowAllProducts/ArrowRight.svg";
 function ArrowAllProducts({ x }: ArrowType) {
-  const ele = document.querySelector(".newAllProducts");
   const handleImageClickRight = () => {
+    const ele = document.querySelector(".newAllProducts");
     ele?.scrollBy({
       behavior: "smooth",
       left: -346,
     });
   };
   const handleImageClickLeft = () => {
+    const ele = document.querySelector(".newAllProducts");
     ele?.scrollBy({
       behavior: "smooth",
       left: 346,

@@ -43,6 +43,9 @@
   span:last-child {
     @include flex(row, space-between, center);
   }
+  @include responsive(xxs) {
+    width: auto;
+  }
 }
 
 .h-t-time-open-text {
@@ -138,7 +141,6 @@
           display: none;
         }
       }
-
 
       a {
         color: $color-7;

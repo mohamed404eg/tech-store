@@ -1,0 +1,75 @@
+.ListDropdownFilterName {
+  & > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 50px;
+    cursor: pointer;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  .ListDropdownArrow {
+    transform: rotate(180deg);
+    transition: ease 400ms;
+  }
+  & > div:not(:first-child) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 210%; /* 27.3px */
+    cursor: pointer;
+    column-gap: 13px;
+
+    input {
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+      appearance: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .ListDropdownColorInputBorder {
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      label {
+        position: absolute;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+    .ListDropdownColorInputBorder:has(input:checked) {
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+      border: 2px solid #e3e3e3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      label {
+        position: absolute;
+      }
+    }
+  }
+}

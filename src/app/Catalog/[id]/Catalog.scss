@@ -1,0 +1,399 @@
+@use "../../../scss/mixin/mixin" as *;
+@use "../../../scss/_variables/variables" as *;
+.CatalogWelcome {
+  @include responsive(md) {
+    height: 60px;
+    margin: 0 -20px;
+  }
+  img {
+    width: 100%;
+    height: 104px;
+    @include responsive(md) {
+      height: 60px;
+    }
+  }
+  @include responsive(xsm) {
+    display: none;
+  }
+}
+.Breadcrumbs {
+  margin-top: 19px;
+  @include responsive(md) {
+    margin-top: 10px;
+  }
+
+  .dir {
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .arrow {
+    color: var(--color-3, #0156ff);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto 7.5px auto 8.5px;
+  }
+  .dirCurrent {
+    color: #a2a6b0;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.catalog {
+  display: flex;
+  flex-direction: row;
+  column-gap: 7px;
+
+  // .filter move in Filter.scss
+  .result {
+    flex-basis: 90%;
+    max-width: 90%;
+
+    @include responsive(xsm) {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    .part-1 {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include responsive(md) {
+        height: 40px;
+      }
+      @include responsive(xsm) {
+        flex-direction: column;
+        height: auto;
+        row-gap: 9.21px;
+      }
+      .part-1-Items {
+        color: #a2a6b0;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 210%; /* 27.3px */
+        @include responsive(md) {
+          font-size: 11px;
+        }
+        @include responsive(xsm) {
+          order: 2;
+          text-align: start;
+          width: 100%;
+        }
+      }
+      .part-2-Items {
+        display: flex;
+        flex-direction: row;
+        column-gap: 19px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        .Position {
+          @include responsive(md) {
+            height: 40px;
+            font-size: 11px;
+          }
+          @include responsive(xsm) {
+            order: 1;
+            max-width: 50%;
+            flex-basis: 50%;
+          }
+          .contentBefore {
+            font-size: 11px;
+          }
+          .SelectCustom {
+            option {
+              font-size: 11px;
+            }
+          }
+        }
+        .perPage {
+          @include responsive(md) {
+            display: none;
+          }
+        }
+
+        .part-2-Items-appear {
+          @include responsive(xsm) {
+            display: none;
+          }
+        }
+
+        .FilterOpenXSM {
+          max-width: 50%;
+          flex-basis: 50%;
+          height: 38px;
+          border-radius: 2px;
+          border: 2px solid var(--color-6, #cacdd8);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          button {
+            width: 100%;
+            height: 100%;
+
+            z-index: 4;
+            background: transparent;
+            color: #000;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            border: none;
+          }
+          @include responsive(xsm, min) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .part-2 {
+      height: 38px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+      display: flex;
+      align-items: center;
+      @include responsive(md) {
+        display: none;
+      }
+    }
+
+    .CatalogText {
+      height: 154px;
+      margin-top: 68px;
+      color: #8c8c8c;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      overflow: hidden;
+      position: relative;
+      transition: ease 400ms;
+      padding-left: 25px;
+
+      p {
+        margin: 24px auto 24px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: inherit;
+        width: 100%;
+        bottom: 0px;
+        background: linear-gradient(to bottom, transparent, white);
+        pointer-events: none;
+      }
+      &:has(+ .CatalogTextMore:checked) {
+        height: auto;
+      }
+    }
+    .CatalogTextMore {
+      appearance: none;
+
+      color: var(--color-5, #a2a6b0);
+      text-align: center;
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding: 8px 26px;
+      border-radius: 50px;
+      border: 2px solid var(--color-5, #a2a6b0);
+      display: block;
+      margin: auto;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: "More";
+      }
+      &:checked:before {
+        content: "less";
+      }
+      &:checked {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .part-3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    @include responsive(md) {
+      justify-content: space-evenly;
+
+      margin-top: 16px;
+    }
+
+    @include responsive(md) {
+      //* ProductTow
+      .ProductTow {
+        height: 240px;
+        width: 100%;
+        padding: 0;
+        &:hover {
+          box-shadow: none;
+        }
+        .tow {
+          column-gap: normal;
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+        }
+        .tow-2 {
+          .modal {
+            font-size: 10px;
+          }
+          .desc {
+            margin-top: 12px;
+            font-size: 11px;
+          }
+          .price {
+            margin-top: 9px;
+            span:first-child {
+              color: #000;
+              font-family: Poppins;
+              font-size: 11px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 140%; /* 15.4px */
+              text-decoration-line: strikethrough;
+            }
+            span:last-child {
+              color: #000;
+              font-family: Poppins;
+              font-size: 13px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 140%;
+            }
+          }
+          .AddToCart {
+            width: 131px;
+            height: 33px;
+            bottom: 4px;
+          }
+        }
+        .tow-3 {
+          display: none;
+        }
+        .tow-4 {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+    //* --ProductTow--
+    @include responsive(xsm) {
+      justify-content: space-between;
+    }
+
+    .Product {
+      height: 346px;
+      width: 235px - 50px;
+      max-width: 234px;
+      @include responsive(xsm) {
+        gap: 0px;
+      }
+
+      .stock {
+        @include responsive(md) {
+          padding-left: 8px;
+        }
+      }
+      .images {
+        @include responsive(xsm) {
+          width: 100px;
+          height: 100px;
+          img {
+            width: inherit;
+            height: inherit;
+          }
+        }
+      }
+      @include responsive(md, min) {
+        &:hover {
+          height: 400px;
+        }
+      }
+      @include responsive(xsm) {
+        padding: 0;
+        width: 149px;
+        height: 256px;
+      }
+
+      .MyRating {
+        margin-top: 10px;
+      }
+      .desc {
+        margin: 6px 0 0 0;
+        @include responsive(xsm) {
+          margin: 0;
+          width: 147px;
+          height: 59px;
+        }
+      }
+
+      .price {
+        @include responsive(xsm) {
+          justify-content: center;
+          width: 148.5px;
+          height: 57px;
+        }
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  .CatalogMyPagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.catalogH2 {
+  color: #000;
+  text-align: left;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 19px auto 19px;
+  @include responsive(md) {
+    font-size: 18px;
+
+    margin: 11px auto 16px auto;
+  }
+
+  @include responsive(xsm) {
+    padding: 11px auto 13px auto;
+  }
+}

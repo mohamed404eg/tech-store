@@ -1,0 +1,71 @@
+@use "../scss/_variables/variables" as *;
+@use "../scss/mixin/mixin" as *;
+
+.GruopProductsPage {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  @include responsive(xsm) {
+    row-gap: 58px;
+  }
+}
+
+.HomeBrand {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
+  margin-top: 31px;
+  margin-bottom: 42px;
+  column-gap: 22px;
+  flex-wrap: wrap;
+  a {
+    padding: 1px;
+    @include flex(row, center, center);
+
+    height: 100%;
+    transition: ease-out 300ms all;
+    flex-basis: 12.5%;
+    max-width: 12.5%;
+    img {
+      width: 100%;
+    }
+    @include responsive(md, min) {
+      &:hover {
+        background: $color-1;
+      }
+    }
+    @include responsive(xxl) {
+      height: auto;
+    }
+  }
+
+  @include responsive(md) {
+    margin-top: 18px;
+    height: auto;
+    row-gap: 33px;
+    a {
+      flex-basis: 33%;
+      max-width: 33%;
+      &:last-child {
+        margin-left: 12%;
+        margin-right: auto;
+      }
+    }
+  }
+
+  @include responsive(xsm) {
+    margin-top: 101px;
+    height: auto;
+    row-gap: 24px;
+    a {
+      flex-basis: calc(50% - 13px);
+      max-width: calc(50% - 13px);
+      &:last-child {
+        margin-left: 12%;
+        margin-right: auto;
+      }
+    }
+  }
+}

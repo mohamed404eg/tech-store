@@ -1,0 +1,340 @@
+@use "../../scss/_variables/variables" as *;
+@use "../../scss/mixin/mixin" as *;
+.Footer {
+  .features {
+    height: 273px;
+    display: flex;
+
+    flex-direction: row;
+    column-gap: 130px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include responsive(md) {
+      height: 186px;
+      column-gap: 20px;
+    }
+    @include responsive(xsm) {
+      flex-direction: column;
+      padding: 20px 0 20px 0;
+      row-gap: 10px;
+      height: 423.003px;
+    }
+
+    .features-single {
+      display: flex;
+      height: 166px;
+      width: 265px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      @include responsive(md) {
+        height: 111px;
+        width: 229px;
+      }
+      @include responsive(xsm) {
+        height: 110px;
+        width: calc(100% - 110px);
+      }
+      img {
+        width: 65px;
+        height: 65px;
+        @include responsive(md) {
+          width: 45px;
+          height: 45px;
+        }
+      }
+      h4 {
+        color: $color-7;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 132.5%; /* 23.85px */
+        margin: 0;
+        margin-top: 24px;
+        @include responsive(md) {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 132.5%; /* 18.55px */
+          margin-top: 7px;
+        }
+      }
+      p {
+        color: $color-7;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 19.6px */
+        opacity: 0.699999988079071;
+        margin-top: 13px;
+        @include responsive(md) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%; /* 16.8px */
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .group {
+    background: #020203;
+
+    @include responsive(md) {
+      height: auto;
+
+      padding-bottom: 35px;
+    }
+
+    .Subscribe {
+      height: 80px;
+      padding-top: 47px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @include responsive(md) {
+        height: auto;
+        width: calc(100% - 110px);
+      }
+      @include responsive(xsm) {
+        flex-direction: column;
+        row-gap: 16px;
+        width: calc(100% - 45px);
+      }
+      h3 {
+        color: #fff;
+        font-family: Poppins;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 132.5%; /* 50.35px */
+        margin: 0;
+        @include responsive(md) {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 132.5%; /* 23.85px */
+        }
+        @include responsive(xsm) {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 132.5%; /* 23.85px */
+        }
+      }
+      p {
+        color: #fff;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 132.5%; /* 21.2px */
+        margin-top: 9px;
+        @include responsive(md) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 132.5%; /* 15.9px */
+        }
+        @include responsive(xsm) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 132.5%; /* 15.9px */
+        }
+      }
+
+      .Subscribe-btn {
+        display: flex;
+        flex-direction: row;
+        column-gap: 23px;
+        align-items: flex-end;
+
+        input {
+          width: 391px;
+          height: 50px;
+          border-radius: 4px;
+          border: 2px solid #fff;
+          background: #000;
+          color: #fff;
+          @include responsive(md) {
+            width: 186px;
+            height: 38px;
+          }
+          @include responsive(xxs) {
+            width: 150px;
+            height: 38px;
+          }
+          &::placeholder {
+            color: #fff;
+            text-align: left;
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 20px; /* 142.857% */
+            padding-left: 11px;
+            @include responsive(md) {
+              font-size: 11px;
+              font-style: normal;
+              font-weight: 300;
+              line-height: 20px; /* 181.818% */
+            }
+          }
+        }
+        button {
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          width: 151px;
+          height: 50px;
+          border-radius: 50px;
+          background: var(--color-3, #0156ff);
+          border: none;
+          cursor: pointer;
+          @include responsive(md) {
+            width: 130px;
+            height: 38px;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 37px;
+    @include responsive(md) {
+      display: none;
+    }
+    & > div {
+      & ul li:first-child {
+        color: rgba(255, 255, 255, 0.5);
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 14px */
+        margin-bottom: 31px;
+      }
+
+      & ul {
+        row-gap: 4px;
+        display: flex;
+        flex-direction: column;
+      }
+      ul li {
+        list-style: none;
+
+        & > a,
+        p {
+          color: #fff;
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .footerEnd {
+    background: #020203;
+    height: 56px;
+    display: flex;
+    @include responsive(xsm) {
+      flex-direction: column;
+    }
+    @include responsive(md) {
+      margin-top: 15px;
+    }
+    .footerEnd-inst {
+      @include responsive(md) {
+        height: auto;
+        width: calc(100% - 110px);
+      }
+      @include responsive(xsm) {
+        width: calc(100% - 45px);
+      }
+    }
+    align-items: center;
+    & > div {
+      width: 100%;
+      border-top: 1px rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .footerEnd-1 {
+        display: flex;
+        flex-direction: row;
+        column-gap: 11px;
+        img {
+          width: 22px;
+          height: 22px;
+        }
+      }
+      .footerEnd-2 {
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+        img {
+          width: 34.071px;
+          height: 21.957px;
+          @include responsive(md) {
+            width: 33.314px;
+            height: 21.957px;
+          }
+        }
+        @include responsive(xsm) {
+          display: none;
+        }
+      }
+
+      .footerEnd-3 {
+        color: #fff;
+        text-align: right;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 132.5%; /* 15.9px */
+        opacity: 0.6000000238418579;
+        @include responsive(md) {
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 132.5%; /* 13.25px */
+        }
+      }
+    }
+
+    .footerEnd-2-xsm {
+      margin-top: 15px;
+      width: 208.085px;
+      height: 21.957px;
+      @include responsive(xsm, min) {
+        display: none !important;
+      }
+    }
+  }
+}

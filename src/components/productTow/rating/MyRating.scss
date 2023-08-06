@@ -1,0 +1,22 @@
+@use "../../../scss/mixin/mixin" as *;
+@use "../../../scss/_variables/variables" as *;
+.MyRating {
+  @include flex(row,  flex-start,center);
+
+  column-gap: 9.16px;
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+  .Reviews {
+    color: $color-5;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 210%; /* 25.2px */
+  }
+
+    
+}

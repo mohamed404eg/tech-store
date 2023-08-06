@@ -1,0 +1,58 @@
+.PartTowAll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 7px;
+  .PartTowSignal {
+    padding-left:18px;
+    padding-right:18px;
+    height: 38px;
+    border-radius: 2px;
+    border: 1px solid var(--color-6, #cacdd8);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 4px;
+    & span:nth-child(1) {
+      color: #000;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 210%; /* 27.3px */
+    }
+    & span:nth-child(2) {
+      color: var(--color-5, #a2a6b0);
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 210%;
+    }
+    & span:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
+.PartTowClearAll {
+  width: 91.015px;
+  height: 38px;
+  border-radius: 2px;
+  border: 1px solid var(--color-6, #cacdd8);
+  background: #fff;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 210%; /* 27.3px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 9px;
+  cursor: pointer;
+}

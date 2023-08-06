@@ -1,0 +1,38 @@
+.MyPagination {
+  .css-1y7coo4-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    color: var(--color-7, #000);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    background-color: #f5f7ff;
+  }
+  .css-1y7coo4-MuiButtonBase-root-MuiPaginationItem-root {
+    border-radius: 50px;
+    border: 2px solid var(--color-5, #a2a6b0);
+    color: var(--color-5, #a2a6b0);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 8px 16px;
+  }
+
+  button[aria-label="Go to next page"],
+  button[aria-label="Go to previous page"] {
+    border: none;
+    background: none;
+    .css-8je8zh-MuiTouchRipple-root {
+    
+      display: none;
+    }
+  }
+  .css-1y7coo4-MuiButtonBase-root-MuiPaginationItem-root {
+    padding: 8px 16px;
+  }
+}

@@ -1,0 +1,57 @@
+@use "../../scss/_variables/variables" as *;
+@use "../../scss/mixin/mixin" as *;
+
+.HomeNews {
+  margin-top: 42.5px;
+
+  h2 {
+    color: $color-7;
+    text-align: start;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .contentNews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 9px;
+    row-gap: 20px;
+  }
+
+  .CopNews {
+    height: 322px;
+    max-width: 225px;
+    min-height: 210px;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 151.106px;
+    }
+    .desc {
+      color: $color-7;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .time {
+      color: $color-5;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  @include responsive(md) {
+    display: none;
+  }
+}

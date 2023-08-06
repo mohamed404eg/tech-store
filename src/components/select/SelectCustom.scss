@@ -1,0 +1,71 @@
+.SortBy {
+  position: relative;
+  width: 176px;
+  height: 50px;
+  border-radius: 2px;
+  border: 2px solid var(--color-6, #cacdd8);
+  cursor: pointer;
+  .contentBefore {
+    display: block;
+    position: absolute;
+    color: #a2a6b0;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 210%; /* 27.3px */
+    top: 50%;
+    left: 25.5px;
+    transform: translateY(-50%);
+  }
+
+  select {
+    border: none;
+    appearance: none;
+    width: 100%;
+    height: inherit;
+    outline: none;
+    padding-left: 50px + 26px;
+    cursor: pointer;
+    option {
+      color: #000;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 210%;
+      height: 10px;
+    }
+  }
+  img {
+    position: absolute;
+
+    right: 12.78px;
+  }
+  .selectArrowDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    transition: ease 400ms;
+    img {
+      transform: rotate(0);
+    }
+  }
+}
+
+.selectArrowRotate {
+  animation: selectArrowAnm 400ms forwards;
+  @keyframes selectArrowAnm {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+}

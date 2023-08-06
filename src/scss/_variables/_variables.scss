@@ -1,13 +1,16 @@
 $responsive-breakpoints: (
   xxs: 320px,
-  xsm: 375px, // primary
+  xsm: 375px,
+  // primary
   sm: 540px,
-  md: 768px, // primary
+  md: 768px,
+  // primary
   lg: 960px,
   xl: 1140px,
   xxl: 1320px,
 );
 $responsive-breakpoints-min: (
+  xsm: 376px,
   sm: 541px,
   md: 769px,
   lg: 961px,

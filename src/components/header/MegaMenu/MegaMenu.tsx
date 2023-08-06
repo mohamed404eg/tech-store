@@ -6,7 +6,7 @@ import "./MegaMenu.scss";
 import Image from "next/image";
 import Product from "@/components/product/Product";
 import arrow from "../../../../public/images/mage/arrow.svg";
-import Brand from "./brand/Brand";
+import Brand from "../../brand/Brand";
 function MegaMenu() {
   const [hidden, setHidden] = React.useState(true);
 
@@ -29,8 +29,12 @@ function MegaMenu() {
         Laptops
       </span>
 
-      <div className={hidden ? "MegaMenu  display-none" : "MegaMenu container"}>
-        <div className="content-MegaMenu">
+      <div
+        className={
+          hidden ? "MegaMenu  display-none container" : "MegaMenu container"
+        }
+      >
+        <div className="content-MegaMenu ">
           <div className="content-one">
             <div className="list">
               {" "}

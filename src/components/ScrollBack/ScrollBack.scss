@@ -1,0 +1,16 @@
+.ScrollBack {
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  z-index: 6;
+  img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,83 @@
+.FilterMobileDrawer {
+  position: fixed;
+  width: calc(100vw - (11.22px + 20px));
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 90;
+  transition: ease 400ms;
+  padding: 0 11.22px 0 20px;
+  .FilterMobileDrawer-item-1 {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      color: #000;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    img {
+      width: 11.92px;
+      height: 11.92px;
+    }
+  }
+  .HrFilterMobileDrawer-item-1 {
+    height: 1px;
+    background: var(--color-6, #cacdd8);
+    width: 100%;
+    border: none;
+  }
+  .FilterMobileDrawer-item-2 {
+    .Back {
+      display: none;
+    }
+    .Filter-part01 {
+      & > h3,
+      .ClearFilter {
+        display: none;
+      }
+      h3 {
+        color: #000;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .ApplyFilters {
+        display: none;
+      }
+    }
+    .FilterBrands {
+      .Brands-title-btn,
+      .BrandsImages {
+        display: none;
+      }
+    }
+
+    .CompareProducts,
+    .MyWishList,
+    .ProductSuggested {
+      display: none;
+    }
+    .ListDropdownFilterName {
+    }
+  }
+}
+
+.FilterMobileDrawerOpen {
+  transform: translateX(0);
+  overflow: scroll;
+}
+.FilterMobileDrawerClose {
+  transform: translateX(-100%);
+}

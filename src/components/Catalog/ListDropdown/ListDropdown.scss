@@ -1,0 +1,37 @@
+.ListDropdown {
+  & > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 50px;
+    cursor: pointer;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  .ListDropdownArrow {
+    transform: rotate(180deg);
+    transition: ease 400ms;
+  }
+  & > div:not(:first-child) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 210%; /* 27.3px */
+    cursor: pointer;
+  }
+}

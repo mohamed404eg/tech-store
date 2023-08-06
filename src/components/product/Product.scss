@@ -22,44 +22,48 @@
     transition: opacity 0.5s ease-in-out;
     z-index: 3;
   }
-  &:hover {
-    width: 234px;
-    height: 400px + 50px;
-    padding-bottom: 17px;
-    z-index: 2;
-    /* Shadow 1 */
-    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.14);
-    .Hover-action {
-      position: absolute;
-      right: 12.5px;
-      top: 16px;
 
-      @include flex(column, center);
-      row-gap: 5px;
-    }
-    .AddToCart {
-      @include flex($align: center);
-      padding: 8px 20px;
+  @include responsive(md, min) {
+    &:hover {
+      width: 234px;
+      height: 400px + 50px;
+      padding-bottom: 17px;
+      z-index: 2;
+      /* Shadow 1 */
 
-      gap: 10px;
-      border-radius: 50px;
-      border: 2px solid $color-3;
-      background-color: $color-11;
-      margin: auto;
-      width: 160px;
-      height: 37px;
-      cursor: pointer;
-      span {
-        color: $color-3;
-        font-family: Poppins;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
+      box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.14);
+      .Hover-action {
+        position: absolute;
+        right: 12.5px;
+        top: 16px;
+
+        @include flex(column, center);
+        row-gap: 5px;
       }
-      img {
-        width: 18.717px;
-        height: 16.667px;
+      .AddToCart {
+        @include flex($align: center);
+        padding: 8px 20px;
+
+        gap: 10px;
+        border-radius: 50px;
+        border: 2px solid $color-3;
+        background-color: $color-11;
+        margin: auto;
+        width: 160px;
+        height: 37px;
+        cursor: pointer;
+        span {
+          color: $color-3;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        img {
+          width: 18.717px;
+          height: 16.667px;
+        }
       }
     }
   }
@@ -82,8 +86,10 @@
       opacity: 1;
       transition: opacity 0.3s ease-in-out;
     }
-    & img:last-child:hover {
-      opacity: 0;
+    @include responsive(md, min) {
+      & img:last-child:hover {
+        opacity: 0;
+      }
     }
   }
 

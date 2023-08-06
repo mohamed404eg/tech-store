@@ -6,6 +6,7 @@
   @include responsive(md) {
     margin-top: 16px;
   }
+
   .newAllProductsTitle {
     display: flex;
     justify-content: space-between;
@@ -53,11 +54,18 @@
     height: 450px;
     margin-top: 16px;
     margin-bottom: 18px;
+    @include responsive(md) {
+      justify-content: flex-start;
+    }
+
     .Product {
       height: 346px;
-      &:hover {
-        height: 400px;
+      @include responsive(md, min) {
+        &:hover {
+          height: 400px;
+        }
       }
+
       .MyRating {
         margin-top: 10px;
       }

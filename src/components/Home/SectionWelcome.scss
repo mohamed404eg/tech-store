@@ -28,13 +28,13 @@
     @include responsive(md) {
       position: absolute;
       margin-top: 19px;
-    
     }
     .WelcomeImgAll {
       display: flex;
       align-items: center;
       width: 100%;
       overflow: hidden;
+      background-color: #e5ecf1;
       .WelcomeImgPrimaryNone {
         display: none;
       }

@@ -1,0 +1,58 @@
+.ListDropdownColor {
+  & > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 50px;
+    cursor: pointer;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  .ListDropdownArrow {
+    transform: rotate(180deg);
+    transition: ease 400ms;
+  }
+  & > div:not(:first-child) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 210%; /* 27.3px */
+    cursor: pointer;
+    column-gap: 6px;
+
+    input {
+      width: 23px;
+      height: 23px;
+      appearance: none;
+      background-color: transparent;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 2px;
+      &:checked {
+        width: 19px;
+        height: 19px;
+      }
+    }
+
+    .ListDropdownColorInputBorder:has(input:checked) {
+      width: 23px;
+      height: 23px;
+      border-radius: 20px;
+      border: 2px solid #0156ff;
+    }
+  }
+}

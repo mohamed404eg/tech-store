@@ -5,6 +5,11 @@ html {
   padding: 0;
   margin: 0;
   border: 0;
+  p {
+    margin: 0;
+  }
+
+  font-family: Poppins;
 }
 
 .container {
@@ -19,10 +24,6 @@ html {
   }
   @include responsive(xxs) {
     max-width: calc(100% - 10px);
-  }
-// min
-  @include responsive(xxl , min) {
-    max-width: calc(100% - 40px);
   }
 }
 
