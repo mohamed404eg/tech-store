@@ -9,7 +9,7 @@ import Image from "next/image";
 // images
 import image33 from "../../../../public/images/Catalog/Brands/image 33.svg";
 import image49 from "../../../../public/images/Catalog/image 49.jpg";
-function Filter() {
+function Filter({ children }: { children?: React.ReactNode }) {
   return (
     <>
       <div className="Back">
@@ -83,6 +83,7 @@ function Filter() {
       <div className="ProductSuggested">
         <Image src={image49} alt="Product Suggested for you"></Image>
       </div>
+      {children}
     </>
   );
 }

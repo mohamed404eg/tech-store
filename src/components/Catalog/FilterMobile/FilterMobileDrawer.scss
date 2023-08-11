@@ -71,6 +71,33 @@
     }
     .ListDropdownFilterName {
     }
+
+    .ListDropdown {
+      h3 {
+        color: #000;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+    .ApplyFiltersMobile {
+      width: 200px;
+      height: 37px;
+      border-radius: 50px;
+      background: var(--color-3, #0156ff);
+      border: none;
+      margin: 16px auto;
+      display: block;
+      color: #fff;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
   }
 }
 
