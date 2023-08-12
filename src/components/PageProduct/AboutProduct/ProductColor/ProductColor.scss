@@ -1,0 +1,42 @@
+.ProductColorInput {
+
+    position: relative;
+    width: 35px;
+    height: 35px;
+
+
+    input {
+        appearance: none;
+        background-color: rebeccapurple;
+        width: 35px;
+        height: 35px;
+        border-radius: 15.5px;
+        border: 2px #fff solid;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+    }
+
+    input:checked+label {
+        background-color: aqua;
+        width: 35px;
+        height: 35px;
+        border-radius: 15.5px + 2px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2px;
+        z-index: 1;
+        padding: 2px;
+        margin: 0;
+
+
+    }
+
+ 
+
+
+}

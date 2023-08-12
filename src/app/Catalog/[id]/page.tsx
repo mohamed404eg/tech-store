@@ -20,7 +20,6 @@ export default function Page({ params }: { params: { id: string } }) {
       <div className="CatalogWelcome">
         <Image src={image26} alt="image26"></Image>
       </div>
-
       <div className="Breadcrumbs">
         <span className="dir">Home</span>
         <span className="arrow">›</span>

@@ -17,7 +17,7 @@ function ComponentManagement() {
   );
 
   return (
-    <div>
+    <div >
       {countPage === 0 ? (
         <>
           <AboutProduct />
