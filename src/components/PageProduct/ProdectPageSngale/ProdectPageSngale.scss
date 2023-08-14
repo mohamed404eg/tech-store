@@ -1,24 +1,175 @@
 @use "../../../scss/_variables/variables" as *;
 @use "../../../scss/mixin/mixin" as *;
-.product {
-  .part0 {
-    height: 101px;
+.ProdectPageSngale {
+  .imageProduct {
+    display: flex;
+    flex-direction: row;
+    column-gap: 54px;
+    padding-left: 23px;
+    @include responsive(xsm) {
+      padding-left: 16px;
+      column-gap: 84px;
+    }
+    .add {
+      display: flex;
+      flex-direction: column;
+      row-gap: 6.48px;
+      margin-top: 96px;
+
+      img {
+        cursor: pointer;
+      }
+      @include responsive(md) {
+        margin-top: 53px;
+      }
+      @include responsive(xsm) {
+        margin-top: 19px;
+      }
+    }
+
+    & > div:last-child {
+      width: 100%;
+      // display: flex;
+      // justify-content: center;
+      .productimage {
+        width: 255px;
+        height: 444px;
+        margin-top: 74px;
+
+        @include responsive(md) {
+          width: 114.179px;
+          height: 198.806px;
+          margin-top: 40.27px;
+        }
+        @include responsive(xsm) {
+          margin-top: 6.27px;
+          width: 114.179px;
+          height: 198.806px;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  .installment {
+    width: 263px;
+    height: 28px;
+    margin: auto;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @include responsive(xsm) {
+      height: auto;
+    }
+    img {
+      width: 263px;
+      height: 28px;
+      @include responsive(xsm) {
+        width: 61px;
+        height: 21px;
+      }
+    }
+
+    .line {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background-color: #00aeb8;
+      max-height: 23px;
+      margin: auto 14.5px auto auto;
+      @include responsive(xsm) {
+        width: 1.5px;
+        min-height: 17.439px;
+        margin-left: 6.82px;
+      }
+    }
+
+    .text {
+      color: #000;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 120.5%;
+      @include responsive(xsm) {
+        font-size: 10px;
+      }
+      /* 14.46px */
+      a {
+        color: #000;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 120.5%;
+        text-decoration-line: underline;
+        @include responsive(xsm) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .imageChange {
+    width: 52px;
+    height: 10px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 11px;
+
+    left: 68.07%;
+    position: relative;
+    margin-top: 25px;
+    @include responsive(md) {
+      left: 47%;
+    }
+    input {
+      appearance: none;
+    }
+
+    & > div {
+      position: relative;
+
+      input + label {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: var(--color-6, #cacdd8);
+        cursor: pointer;
+      }
+
+      input:checked + label {
+        background-color: #0156ff;
+      }
+    }
+  }
+
+  // Part0 Mobile
+
+  .Part0Mobile {
+    height: 21px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include responsive(xsm) {
+    margin: 20px auto 10px auto;
+    padding-left: 15px;
+    @include responsive(xsm, min) {
       display: none;
     }
+
     .SelectSection {
       display: flex;
       flex-direction: row;
       column-gap: 30px;
       @include responsive(md) {
-        column-gap: 18px;
+        column-gap: 17px;
       }
       input {
         appearance: none;
-        display: none;
+        // display: none;
       }
       label {
         position: relative;
@@ -31,7 +182,7 @@
         font-weight: 600;
         line-height: normal;
       }
-      input:checked ~ label {
+       input:checked ~ label {
         color: #000;
       }
       input:checked ~ label::after {
@@ -205,48 +356,6 @@
         @include responsive(md) {
           height: 38px;
           width: 129px;
-        }
-      }
-    }
-  }
-  .part1 {
-    display: flex;
-    height: 675px;
-    @include responsive(md) {
-      max-width: 100%;
-      height: 360px;
-    }
-    @include responsive(xsm) {
-      flex-direction: column;
-      height: auto;
-    }
-    & > div {
-      flex-basis: 50%;
-      max-width: 50%;
-      @include responsive(xsm) {
-        flex-basis: 100%;
-        max-width: 100%;
-      }
-    }
-    .child1 {
-      background: var(--color-1, #f5f7ff);
-      @include responsive(md) {
-        padding-left: 25px;
-        padding-right: 56px;
-      }
-      @include responsive(xsm) {
-        order: 2;
-        padding-left: 15px;
-        padding-right: 15px;
-        background: var(--color-1, #fff);
-      }
-    }
-    .child2 {
-      background: #fff;
-      @include responsive(xsm) {
-        order: 1;
-        .imageChange {
-          display: none;
         }
       }
     }

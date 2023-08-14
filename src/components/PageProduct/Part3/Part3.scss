@@ -1,0 +1,157 @@
+@use "../../../scss/_variables/variables" as *;
+@use "../../../scss/mixin/mixin" as *;
+.ProdectPageSngale-part3 {
+  background: linear-gradient(
+    90deg,
+    #010101 0%,
+    #0e0f10 68.23%,
+    rgba(20, 21, 23, 0) 100%
+  );
+  height: 681px;
+  display: flex;
+  flex-direction: column;
+  @include responsive(md) {
+    max-height: 354px;
+    background: linear-gradient(
+      90deg,
+      #010101 0%,
+      #0e0f10 40.23%,
+      rgba(20, 21, 23, 0) 100%
+    );
+    @include responsive(xsm) {
+      max-height: max-content;
+      height: auto;
+      background: linear-gradient(
+        0deg,
+        #010101 0%,
+        #0e0f10 68.23%,
+        rgba(20, 21, 23, 0) 100%
+      );
+    }
+  }
+  .chiled0 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @include responsive(md) {
+      align-items: flex-start;
+      overflow: hidden;
+    }
+    @include responsive(xsm) {
+      flex-direction: column;
+    }
+
+    div {
+      &:first-child {
+        @include responsive(xsm) {
+          order: 1;
+        }
+      }
+      &:first-child {
+        padding-left: 10%;
+        @include responsive(md) {
+          padding-left: 59px;
+        }
+        @include responsive(xsm) {
+          padding-left: 25px;
+          order: 2;
+        }
+      }
+    }
+    h2 {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 132.5%; /* 58.3px */
+      @include responsive(md) {
+        margin-top: 58px;
+        font-size: 32px;
+      }
+      @include responsive(xsm) {
+        font-size: 32px;
+      }
+    }
+    .desc {
+      @include responsive(md) {
+        height: 169px;
+        width: 326px;
+        p {
+          white-space: normal;
+        }
+      }
+      @include responsive(xsm) {
+        margin-bottom: 31px;
+      }
+    }
+    p {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px; /* 144.444% */
+      @include responsive(md) {
+        font-size: 14px;
+
+        line-height: 20px;
+      }
+      @include responsive(xsm) {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px;
+      }
+      &:first-child {
+        @include responsive(md) {
+          margin-top: 13px;
+        }
+      }
+    }
+    & p:last-child {
+      margin-top: 30px;
+      @include responsive(md) {
+        margin-top: 26px;
+      }
+    }
+  }
+  .bacImage {
+    @include responsive(md) {
+      right: 83px;
+      position: relative;
+      z-index: -1;
+      img {
+        width: 503px;
+        height: 356px;
+        padding-right: 15px;
+      }
+    }
+    @include responsive(xsm) {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(
+        90deg,
+        #010101 0%,
+        #0e0f10 68.23%,
+        rgba(20, 21, 23, 0) 100%
+      );
+      img {
+        width: 503px;
+        height: 356px;
+        padding-right: 15px;
+      }
+    }
+  }
+  .inputSlect {
+    margin-top: -57px;
+    padding-left: 8%;
+    @include responsive(md) {
+      display: none;
+    }
+  }
+}

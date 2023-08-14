@@ -1,0 +1,25 @@
+.contactus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .part0 {
+    flex-basis: 80%;
+    max-width: 80%;
+
+    h1 {
+      color: #000;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  .part1 {
+    flex-basis: 20%;
+    max-width: 411px;
+    background: var(--color-1, #f5f7ff);
+  }
+}

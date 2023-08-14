@@ -1,0 +1,25 @@
+.SpecsTable {
+    max-width: 401px;
+    max-height: 123px;
+    border: 1px solid var(--color-6, #CACDD8);
+    margin: 23px auto 50px auto;
+
+    &>div:nth-child(even) {
+        background: #F5F7FF;
+    }
+
+    &>div {
+        height: 41px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        background: #FFF;
+
+
+        &>span {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+    }
+}

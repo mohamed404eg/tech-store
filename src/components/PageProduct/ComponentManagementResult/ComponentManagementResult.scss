@@ -1,0 +1,126 @@
+@use "../../../scss/_variables/variables" as *;
+@use "../../../scss/mixin/mixin" as *;
+
+.ComponentManagementResult {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include responsive(xxl, min) {
+    width: 567px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Breadcrumbs {
+    margin-top: 19px;
+
+    @include responsive(md) {
+      margin-top: 10px;
+    }
+    @include responsive(xsm) {
+      display: none;
+    }
+
+    .dir {
+      color: #000;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .arrow {
+      color: var(--color-3, #0156ff);
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin: auto 7.5px auto 8.5px;
+    }
+
+    .dirCurrent {
+      color: #a2a6b0;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .ComponentManagementResultBody {
+    .ContactCatogry {
+      margin-top: 29px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      @include responsive(xsm) {
+        margin-bottom: 18.5px;
+      }
+      .Contact {
+        color: #000;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        @include responsive(md) {
+          font-size: 10px;
+        }
+        a {
+          color: var(--color-3, #0156ff);
+          font-family: Poppins;
+          font-size: inherit;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-decoration-line: underline;
+        }
+      }
+
+      .Catogry {
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+      }
+    }
+  }
+
+  .MoreInformation {
+    margin-top: 166px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include responsive(md) {
+      display: none;
+    }
+    @include responsive(xxl, min) {
+      left: -57.5px;
+    }
+
+    span {
+      color: #000;
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+
+    position: relative;
+  }
+}

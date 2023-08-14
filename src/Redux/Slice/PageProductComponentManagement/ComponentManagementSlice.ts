@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface  ComponentManagementState {
+export interface ComponentManagementState {
   ViewComponentManagement: number;
 }
 
-const initialState:  ComponentManagementState = {
+const initialState: ComponentManagementState = {
   ViewComponentManagement: 0,
 };
 
@@ -13,7 +13,7 @@ export const ComponentManagementSlice = createSlice({
   name: "ComponentManagementSlice",
   initialState,
   reducers: {
-    ViewComponentManagementChange: (state, action: PayloadAction<0 | 1| 2>) => {
+    ViewComponentManagementChange: (state, action: PayloadAction<0 | 1 | 2>) => {
       state.ViewComponentManagement = action.payload;
     },
   },

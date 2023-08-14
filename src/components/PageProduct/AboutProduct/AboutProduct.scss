@@ -1,165 +1,134 @@
 @use "../../../scss/_variables/variables" as *;
 @use "../../../scss/mixin/mixin" as *;
 
-.AboutProduct {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  @include responsive(xxl, min) {
-    width: 567px;
-    margin-left: auto;
-    margin-right: auto;
+.AboutProductBody {
+  h1 {
+    margin: 0;
+    margin-top: 25px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include responsive(md) {
+      font-size: 22px;
+      margin-top: 24px;
+    }
+    @include responsive(xsm) {
+      margin-top: 13px;
+    }
   }
 
-  .Breadcrumbs {
-    margin-top: 19px;
-
+  .firstReview {
+    color: var(--color-3, #0156ff);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 14px;
     @include responsive(md) {
-      margin-top: 10px;
+      font-size: 10px;
+      margin-top: 6.47px;
+    }
+  }
+
+  .desc {
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px;
+    /* 166.667% */
+    margin-top: 24px;
+    @include responsive(md) {
+      font-size: 12px;
+
+      margin-top: 14.53px;
+    }
+    @include responsive(xsm) {
+      line-height: 20px; /* 166.667% */
+    }
+  }
+
+  .collectionProductColor {
+    display: flex;
+    flex-direction: row;
+    column-gap: 18px;
+    margin-top: 46px;
+    @include responsive(md) {
+      margin-top: 16.53px;
+      column-gap: 13.72px;
+    }
+  }
+
+  .ContactCatogry {
+    margin-top: 29px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .Contact {
+      color: #000;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+
+      @include responsive(md) {
+        font-size: 10px;
+      }
+      a {
+        color: var(--color-3, #0156ff);
+        font-family: Poppins;
+        font-size: inherit;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+      }
     }
 
-    .dir {
+    .Catogry {
       color: #000;
       text-align: center;
       font-family: Poppins;
       font-size: 12px;
       font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-
-    .arrow {
-      color: var(--color-3, #0156ff);
-      font-family: Poppins;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      margin: auto 7.5px auto 8.5px;
-    }
-
-    .dirCurrent {
-      color: #a2a6b0;
-      font-family: Poppins;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
-
-  .AboutProductBody {
-    h1 {
-      margin: 0;
-      margin-top: 25px;
-      color: #000;
-      font-family: Poppins;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-    }
-
-    .firstReview {
-      color: var(--color-3, #0156FF);
-      font-family: Poppins;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      margin-top: 14px;
-    }
-
-    .desc {
-      color: #000;
-      font-family: Poppins;
-      font-size: 18px;
-      font-style: normal;
       font-weight: 300;
-      line-height: 30px;
-      /* 166.667% */
-      margin-top: 24px;
+      line-height: normal;
     }
+  }
+}
 
-    .collectionProductColor {
-      display: flex;
-      flex-direction: row;
-      column-gap: 18px;
-      margin-top: 46px;
-    }
-
-    .ContactCatogry {
-      margin-top: 29px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-
-      .Contact {
-        color: #000;
-        font-family: Poppins;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-
-        a {
-          color: var(--color-3, #0156FF);
-          font-family: Poppins;
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          text-decoration-line: underline;
-        }
-      }
-
-      .Catogry {
-        color: #000;
-        text-align: center;
-        font-family: Poppins;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-      }
-
-
-    }
-
-
-
-
+.MoreInformation {
+  margin-top: 166px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include responsive(md) {
+    display: none;
+  }
+  @include responsive(xxl, min) {
+    left: -57.5px;
   }
 
-
-  .MoreInformation {
-    margin-top: 166px;
+  span {
     color: #000;
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
-
-    @include responsive(xxl, min) {
-      left: -57.5px;
-
-
-    }
-
-    span {
-      color: #000;
-      font-family: Poppins;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      text-transform: uppercase;
-    }
-
-    position: relative;
+    text-transform: uppercase;
   }
 
+  position: relative;
 }

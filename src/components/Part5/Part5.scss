@@ -1,0 +1,113 @@
+@use "../../scss/_variables/variables" as *;
+@use "../../scss/mixin/mixin" as *;
+
+.PageProduct-Part5 {
+  width: 100%;
+  height: 693px;
+  background: radial-gradient(50% 50% at 50% 50%, #242528 0%, #040404 100%);
+  padding-top: 76px;
+  @include responsive(md) {
+    height: auto;
+    padding-top: 31px;
+  }
+  h2 {
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    @include responsive(md) {
+      font-size: 32px;
+    }
+  }
+  h2 + p {
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px; /* 144.444% */
+    margin: auto;
+    margin-top: 28px;
+    width: 418px;
+    @include responsive(md) {
+      font-size: 12px;
+      line-height: 20px; /* 166.667% */
+    }
+    @include responsive(xsm) {
+      width: auto;
+    }
+  }
+  .Part5-features-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 47px;
+    @include responsive(md) {
+      flex-wrap: wrap;
+      row-gap: 11px;
+    }
+    @include responsive(xsm) {
+      row-gap: 10px;
+    }
+    margin-top: 60px;
+    .Part5-features {
+      width: 254px;
+      height: 264px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 28px;
+      @include responsive(md) {
+        flex-basis: 46%;
+        max-width: 46%;
+        row-gap: 10px;
+        height: 198px;
+      }
+      img {
+        width: 136px;
+        height: 136px;
+        @include responsive(md) {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      & > span {
+        color: #fff;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 22px;
+        text-align: center;
+        width: 254px;
+        @include responsive(md) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 22px; /* 183.333% */
+        }
+        span {
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 22px; /* 157.143% */
+          @include responsive(md) {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
