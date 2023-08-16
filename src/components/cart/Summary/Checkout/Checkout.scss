@@ -1,0 +1,100 @@
+@use "../../../../scss/_variables/variables" as *;
+@use "../../../../scss/mixin/mixin" as *;
+
+.cartCheckout {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  margin-top: 10px;
+  @include responsive(md) {
+    row-gap: 10px;
+  }
+  @include responsive(xsm) {
+    align-items: center;
+  }
+
+  .Proceed {
+    width: 386px;
+    height: 50px;
+    border-radius: 50px;
+    background: var(--color-3, #0156ff);
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include responsive(md) {
+      width: calc(100% - 17px * 2);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    @include responsive(xsm) {
+      width: calc(100% - 17px);
+    }
+  }
+
+  .paypal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+    width: 386px;
+    height: 50px;
+    border-radius: 50px;
+    background: #ffb800;
+    color: #232c65;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include responsive(md) {
+      width: calc(100% - 17px * 2);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    @include responsive(xsm) {
+      width: calc(100% - 17px);
+    }
+  }
+
+  .Multiple {
+    width: 386px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid var(--color-5, #a2a6b0);
+
+    color: var(--color-10, #666);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include responsive(md) {
+      border: none;
+      width: calc(100% - 17px * 2);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    @include responsive(xsm) {
+      width: calc(100% - 17px);
+      border: 2px solid var(--color-5, #a2a6b0);
+    }
+  }
+  button {
+    @include responsive(md) {
+      height: 38px !important;
+    }
+  }
+}

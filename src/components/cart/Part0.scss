@@ -1,0 +1,119 @@
+@use "../../scss/_variables/variables" as *;
+@use "../../scss/mixin/mixin" as *;
+
+.pageCart {
+  width: 100%;
+  .part0-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 13px;
+    @include responsive(md) {
+      display: none;
+    }
+    span {
+      min-width: 80px;
+    }
+    .head-part0 {
+      display: flex;
+      flex-direction: row;
+      column-gap: 60px;
+      padding-right: 66px;
+    }
+    border-bottom: 1px solid #cacdd8;
+  }
+  .groupProductCart {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+    @include responsive(md) {
+      row-gap: 0;
+    }
+  }
+
+  .pageCartPart0Btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 33px;
+    @include responsive(md) {
+      flex-direction: column;
+      margin-top: 16px;
+      row-gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      @include responsive(md) {
+        width: calc(100% - 30px) !important;
+      }
+    }
+    & > div {
+      display: flex;
+      flex-direction: row;
+      column-gap: 7px;
+      @include responsive(md) {
+        flex-direction: column;
+        row-gap: 10px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      @include responsive(xsm) {
+        display: none;
+      }
+      button {
+        &:first-child {
+          width: 200px;
+          height: 37px;
+          border-radius: 50px;
+          border: 2px solid var(--color-5, #a2a6b0);
+          color: var(--color-5, #a2a6b0);
+          text-align: center;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        &:last-child {
+          width: 200px;
+          height: 37px;
+          border-radius: 50px;
+          background: var(--color-7, #000);
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+    }
+    & > button {
+      width: 200px;
+      height: 37px;
+      border-radius: 50px;
+      background: var(--color-7, #000);
+      color: #fff;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}

@@ -1,0 +1,156 @@
+@use "../../../../scss/_variables/variables" as *;
+@use "../../../../scss/mixin/mixin" as *;
+
+.DiscountCode {
+  width: 100%;
+  margin-bottom: 29px;
+  .ShippingAndTaxpart0 {
+    width: 100%;
+
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #000;
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding-left: 0;
+      padding-top: 18.57px;
+
+      img {
+        transition: ease 400ms;
+      }
+      .arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    p {
+      width: 287px;
+      color: var(--color-10, #666);
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: 12.43px;
+    }
+  }
+  .groupInputShippingAndTax {
+    margin-top: 12.43px;
+    @include responsive(md) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .Enterdiscountcode {
+      display: flex;
+      flex-direction: column;
+      column-gap: 5px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        label {
+          height: 38px;
+          color: var(--color-7, #000);
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 27.3px */
+        }
+
+        input {
+          height: 50px;
+          border-radius: 4px;
+          border: 1px solid var(--color-5, #a2a6b0);
+          background: #fff;
+          @include responsive(md) {
+            height: 40px;
+          }
+          &::placeholder {
+            padding-left: 17px;
+          }
+        }
+      }
+    }
+
+    .CartShipping {
+      margin-top: 17px;
+      & > div {
+        min-height: 88px;
+        label {
+          height: 38px;
+          display: block;
+          color: var(--color-7, #000);
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 27.3px */
+        }
+
+        & > div {
+          display: flex;
+          flex-direction: row;
+          column-gap: 5px;
+          align-items: flex-start;
+          input {
+            min-width: 21px;
+            min-height: 21px;
+            flex-basis: 21px;
+            margin: 0;
+            padding: 0;
+          }
+          span {
+            color: #000;
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; /* 142.857% */
+          }
+        }
+      }
+    }
+  }
+
+  .btnApply {
+    width: 386px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid var(--color-3, #0156ff);
+    color: var(--color-3, #0156ff);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 19px;
+    @include responsive(md) {
+      display: none;
+    }
+  }
+  .Multiple {
+    @include responsive(md, min) {
+      display: none;
+    }
+    color: var(--color-3, #0156ff);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: auto;
+    margin-top: 23px;
+  }
+}

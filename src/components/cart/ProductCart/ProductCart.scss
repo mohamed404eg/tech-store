@@ -1,0 +1,292 @@
+@use "../../../scss/_variables/variables" as *;
+@use "../../../scss/mixin/mixin" as *;
+
+.ProductCart {
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+  position: relative;
+  border-bottom: 1px solid #cacdd8;
+  padding-bottom: 25px;
+  @include responsive(md) {
+    height: 68px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border: none;
+  }
+  img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    @include responsive(md) {
+      width: 68px;
+      height: 68px;
+    }
+  }
+  p {
+    max-width: 271px;
+    margin-left: 29px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include responsive(md) {
+      height: 51px;
+      max-width: 200px;
+      margin-left: 18px;
+      color: #000;
+      font-family: Poppins;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .flex-s1 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 60px;
+
+    max-width: 337px;
+    position: absolute;
+    right: 97px;
+    @include responsive(md) {
+      display: none;
+    }
+  }
+  .price {
+    //  margin-left: 26px;
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include responsive(md) {
+      display: none;
+    }
+  }
+
+  .ProductCartQuantity {
+    // margin-left: 60px;
+    @include responsive(md) {
+      display: none;
+    }
+    .Quantity {
+      width: 70px;
+      height: 50px;
+      @include responsive(md) {
+        width: 56px;
+        height: 42.4px;
+
+        background: #e5ecf1;
+      }
+
+      border-radius: 6px;
+      background: var(--color-1, #f5f7ff);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .arrow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 32px;
+        padding-right: 12px;
+        @include responsive(md) {
+          padding-right: 7px;
+        }
+        img {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+        }
+      }
+      & input {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: inherit;
+        border-radius: inherit;
+        text-align: center;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        -moz-appearance: textfield;
+
+        &::placeholder {
+          color: var(--color-7, #000);
+          text-align: center;
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 27.3px */
+          @include responsive(md) {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  .Subtotal {
+    //   margin-left: 60px;
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .action {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    @include responsive(md) {
+      display: none;
+    }
+    img {
+      width: 26.976px;
+      height: 26.976px;
+      cursor: pointer;
+    }
+  }
+}
+.respMd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #cacdd8;
+  padding-bottom: 18.6px;
+  @include responsive(md, min) {
+    display: none;
+  }
+  & > div {
+    &:first-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: auto;
+      flex-basis: 90%;
+      margin-right: auto;
+      margin-left: 0;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+
+        margin-right: auto;
+        margin-left: 0;
+        @include responsive(xsm) {
+          margin-right: auto;
+          margin-left: auto;
+        }
+        span {
+          &:first-child {
+            color: #000;
+            font-family: Poppins;
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+          &:last-child {
+            color: #000;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+      }
+
+      .Quantity {
+        width: 70px;
+        height: 50px;
+        @include responsive(md) {
+          width: 56px;
+          height: 42.4px;
+
+          background: #f5f7ff;
+        }
+
+        border-radius: 6px;
+        background: var(--color-1, #f5f7ff);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .arrow {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 16px;
+          height: 32px;
+          padding-right: 12px;
+          @include responsive(md) {
+            padding-right: 7px;
+          }
+          img {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+          }
+        }
+        & input {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          border: none;
+          outline: none;
+          background: inherit;
+          border-radius: inherit;
+          text-align: center;
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          -moz-appearance: textfield;
+
+          &::placeholder {
+            color: var(--color-7, #000);
+            text-align: center;
+            font-family: Poppins;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 210%; /* 27.3px */
+            @include responsive(md) {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .actionMd {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+}

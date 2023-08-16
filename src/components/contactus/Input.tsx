@@ -11,6 +11,9 @@ type InputProps = {
 function Input({ id, label, placeholder, isrequired, type, name }: InputProps) {
   return (
     <div>
+      <label htmlFor={id}>
+        {label} {isrequired === true ? <span>*</span> : <></>}
+      </label>
       <input
         type={type}
         id={id}
@@ -18,7 +21,6 @@ function Input({ id, label, placeholder, isrequired, type, name }: InputProps) {
         required={isrequired}
         name={name}
       />
-      <label htmlFor={id}>{label}</label>
     </div>
   );
 }

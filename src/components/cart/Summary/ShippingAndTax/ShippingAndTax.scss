@@ -1,0 +1,231 @@
+@use "../../../../scss/_variables/_variables.scss" as *;
+@use "../../../../scss/mixin/mixin" as *;
+
+.ShippingAndTax {
+  width: 100%;
+  .arrow {
+    transform: rotate(180deg);
+  }
+  .ShippingAndTaxpart0 {
+    width: 100%;
+
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #000;
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding-left: 0;
+      padding-top: 18.57px;
+      @include responsive(md) {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      img {
+        transition: ease 400ms;
+      }
+      .arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    p {
+      width: 287px;
+      color: var(--color-10, #666);
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: 12.43px;
+      @include responsive(md) {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+  .groupInputShippingAndTax {
+    margin-top: 12.43px;
+
+    .CountryDiv {
+      height: 88px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      label {
+        color: var(--color-7, #000);
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 210%; /* 27.3px */
+        width: 143.568px;
+        height: 38px;
+        @include responsive(md) {
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%;
+        }
+      }
+      & > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        border-radius: 4px;
+        border: 1px solid var(--color-5, #a2a6b0);
+        background: #fff;
+        padding-right: 10.5px;
+        @include responsive(md) {
+          height: 38px;
+        }
+      }
+      select {
+        appearance: none;
+        height: 50px;
+        padding-left: 17px;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-radius: inherit;
+        @include responsive(md) {
+          height: 38px;
+        }
+        &::placeholder {
+          color: var(--color-7, #000);
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px; /* 142.857% */
+          @include responsive(md) {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 20px;
+          }
+        }
+
+        & option {
+          color: var(--color-7, #000);
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px; /* 142.857% */
+          @include responsive(md) {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+
+    .State-Zip {
+      display: flex;
+      flex-direction: column;
+      column-gap: 5px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        label {
+          height: 38px;
+          color: var(--color-7, #000);
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 27.3px */
+          @include responsive(md) {
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 210%;
+          }
+        }
+
+        input {
+          height: 50px;
+          border-radius: 4px;
+          border: 1px solid var(--color-5, #a2a6b0);
+          background: #fff;
+          @include responsive(md) {
+            height: 38px;
+          }
+        }
+      }
+    }
+
+    .CartShipping {
+      margin-top: 17px;
+      @include responsive(md) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 19px;
+      }
+      & > div {
+        min-height: 88px;
+        display: flex;
+        flex-direction: column;
+        @include responsive(md) {
+          row-gap: 10px;
+        }
+        label {
+          height: 38px;
+          display: block;
+          color: var(--color-7, #000);
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 27.3px */
+          @include responsive(md) {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            height: 15px;
+          }
+        }
+
+        & > div {
+          display: flex;
+          flex-direction: row;
+          column-gap: 5px;
+          align-items: flex-start;
+          input {
+            min-width: 21px;
+            min-height: 21px;
+            flex-basis: 21px;
+            margin: 0;
+            padding: 0;
+          }
+          span {
+            color: #000;
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; /* 142.857% */
+          }
+        }
+      }
+    }
+  }
+}

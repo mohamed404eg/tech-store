@@ -1,0 +1,92 @@
+@use "../../../../scss/_variables/variables" as *;
+@use "../../../../scss/mixin/mixin" as *;
+.FooterSummary {
+  margin-top: 24px;
+  height: 23px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include responsive(md) {
+    column-gap: 15.94px;
+    max-width: 230.033px;
+    margin-top: 29px;
+  }
+  @include responsive(xsm) {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 21px;
+  }
+  img {
+    width: 59px;
+    height: 21px;
+    @include responsive(md) {
+      width: 61px;
+      height: 21px;
+    }
+  }
+
+  .line {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #00aeb8;
+    margin-left: 7px;
+    margin-right: 10px;
+    @include responsive(md) {
+      display: none;
+    }
+  }
+
+  p {
+    color: #272560;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120.5%;
+    @include responsive(md) {
+      color: #000;
+      font-family: Poppins;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 120.5%;
+    }
+
+    span {
+      color: #272560;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120.5%; /* 14.46px */
+      @include responsive(md) {
+        color: #000;
+        font-family: Poppins;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 120.5%;
+      }
+    }
+    a {
+      color: #272560;
+      font-family: Poppins;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120.5%;
+      text-decoration-line: underline;
+      @include responsive(md) {
+        color: #000;
+        font-family: Poppins;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 120.5%;
+        text-decoration-line: underline;
+      }
+    }
+  }
+}

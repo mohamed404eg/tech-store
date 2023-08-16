@@ -1,0 +1,84 @@
+@use "../../../../scss/_variables/variables" as *;
+@use "../../../../scss/mixin/mixin" as *;
+
+.cartTotal {
+  padding-top: 24px;
+  @include responsive(md, min) {
+    border-top: 1px var(--color-6, #cacdd8) solid;
+  }
+  .GroupTotal {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    & > div:not(:has(p)) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &:last-child {
+        span {
+          color: var(--color-7, #000);
+          text-align: right;
+          font-family: Poppins;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 37.8px */
+          @include responsive(md) {
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 210%;
+          }
+        }
+      }
+      span {
+        color: var(--color-7, #000);
+        text-align: right;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 210%; /* 27.3px */
+        @include responsive(md) {
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%;
+        }
+      }
+    }
+    & > div:has(p) {
+      display: flex;
+      flex-direction: column;
+      & > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        span {
+          color: var(--color-7, #000);
+          text-align: right;
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 27.3px */
+          @include responsive(md) {
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 210%;
+          }
+        }
+      }
+      p {
+        color: var(--color-5, #a2a6b0);
+        font-family: Poppins;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 180%; /* 18px */
+      }
+    }
+  }
+}

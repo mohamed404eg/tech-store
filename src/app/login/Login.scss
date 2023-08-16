@@ -1,0 +1,281 @@
+@use "../../scss/_variables/variables" as *;
+@use "../../scss/mixin/mixin" as *;
+
+.LoginTop {
+  h1 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 19px;
+
+    @include responsive(md) {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  .Login {
+    max-width: 564px + 564px + 34px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 34px;
+    height: 415.461px;
+    justify-content: space-between;
+    @include responsive(xsm) {
+      flex-direction: column;
+      height: auto;
+      row-gap: 16px;
+    }
+    .Registered {
+      background: var(--color-1, #f5f7ff);
+      flex-basis: 50%;
+      max-width: 50%;
+      display: flex;
+
+      padding-left: 37px;
+      padding-right: 57px;
+      padding-top: 37px;
+      flex-direction: column;
+      @include responsive(xsm) {
+        flex-basis: 100%;
+        max-width: 100%;
+        min-height: 344px;
+        padding-left: 18px;
+        padding-right: 20px;
+        padding-top: 20px;
+      }
+      h2 {
+        color: #000;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        @include responsive(md) {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+      p {
+        color: var(--color-7, #000);
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 30px; /* 214.286% */
+        margin-top: 29px;
+        @include responsive(md) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 22px;
+        }
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 21px;
+      }
+      input {
+        height: 50px;
+        border-radius: 4px;
+        border: 1px solid var(--color-5, #a2a6b0);
+        background: #fff;
+        width: 100%;
+        @include responsive(md) {
+          height: 38px;
+        }
+        &::placeholder {
+          color: var(--color-5, #a2a6b0);
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 20px; /* 142.857% */
+          padding-left: 17px;
+          @include responsive(md) {
+            padding-left: 14.91px;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 20px; /* 166.667% */
+          }
+        }
+      }
+
+      label {
+        color: var(--color-7, #000);
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 210%; /* 27.3px */
+        @include responsive(md) {
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%; /* 23.1px */
+        }
+        span {
+          color: var(--color-8, #c94d3f);
+          font-family: Poppins;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 210%;
+          @include responsive(md) {
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 210%;
+          }
+        }
+      }
+      .button-action {
+        display: flex;
+        flex-direction: row;
+        column-gap: 23px;
+        button {
+          border: none;
+          background: transparent;
+          margin-top: 30.47px;
+          cursor: pointer;
+        }
+        .SignIn {
+          width: 151px;
+          height: 50px;
+          border-radius: 50px;
+          background: var(--color-3, #0156ff);
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          @include responsive(md) {
+            width: 133px;
+            height: 38px;
+          }
+          @include responsive(xsm) {
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+        .Forgot {
+          color: var(--color-3, #0156ff);
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px; /* 142.857% */
+          @include responsive(xsm) {
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    .NewCustomer {
+      background: var(--color-1, #f5f7ff);
+      flex-basis: 50%;
+      max-width: 50%;
+      padding-left: 37px;
+      padding-right: 57px;
+      padding-top: 37px;
+      @include responsive(xsm) {
+        flex-basis: 100%;
+        max-width: 100%;
+        min-height: 263px;
+        padding-left: 18px;
+        padding-right: 20px;
+        padding-top: 20px;
+      }
+      h2 {
+        color: #000;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        @include responsive(md) {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+      p {
+        color: var(--color-7, #000);
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 30px; /* 214.286% */
+        margin-top: 29px;
+        @include responsive(md) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 22px;
+        }
+      }
+      ul {
+        padding-left: 18px;
+      }
+      ul li {
+        color: var(--color-7, #000);
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px; /* 142.857% */
+        @include responsive(md) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 22px;
+        }
+      }
+      button {
+        border: none;
+        background: transparent;
+        margin-top: 35.92px;
+        cursor: pointer;
+        width: 208px;
+        height: 50px;
+        border-radius: 50px;
+        background: var(--color-3, #0156ff);
+        color: #fff;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        @include responsive(md) {
+          width: 183px;
+          height: 38px;
+        }
+
+        @include responsive(xsm) {
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
