@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "raw.githubusercontent.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "loremflickr.com",
+        port: "",
+      },
     ],
   },
 };

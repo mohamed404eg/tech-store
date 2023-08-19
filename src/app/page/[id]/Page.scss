@@ -1,0 +1,247 @@
+@use "../../../scss/_variables/variables" as *;
+@use "../../../scss/mixin/mixin" as *;
+
+.Page {
+  margin-bottom: 63px;
+  h1 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    margin-top: 19px;
+    @include responsive(md) {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    @include responsive(xsm) {
+      margin-top: 15px;
+    }
+  }
+
+  .groupContent {
+    display: flex;
+    flex-direction: column;
+    & > div {
+      height: 681px;
+      display: flex;
+      flex-direction: row;
+      column-gap: 123px;
+      justify-content: center;
+      align-content: center;
+      @include responsive(md) {
+        column-gap: 34px;
+        height: 405px;
+      }
+      @include responsive(xsm) {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 25px;
+      }
+      //   insed
+      & div {
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+
+          justify-content: center;
+          row-gap: 32px;
+          @include responsive(xsm) {
+            order: 2;
+            padding-top: 10px;
+          }
+          h2 {
+            color: #fff;
+            font-family: Poppins;
+            font-size: 44px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 132.5%; /* 58.3px */
+            max-width: 465px;
+
+            @include responsive(md) {
+              font-size: 32px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 132.5%; /* 42.4px */
+
+              max-width: 299px;
+              display: flex;
+              row-gap: 8px;
+              flex-direction: column;
+            }
+            @include responsive(xsm) {
+              padding-left: 33px;
+            }
+            img {
+              width: 50px;
+              height: 50px;
+              margin-right: 24px;
+              @include responsive(md) {
+                width: 28px;
+                height: 28px;
+              }
+            }
+          }
+          & > div {
+            color: #fff;
+            font-family: Poppins;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 26px; /* 144.444% */
+            display: flex;
+            flex-direction: column;
+            row-gap: 50px;
+            max-width: 564.128px;
+
+            @include responsive(md) {
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 300;
+              line-height: 20px; /* 142.857% */
+              row-gap: 30px;
+              max-width: 326px;
+            }
+            @include responsive(xsm) {
+              padding-left: 33px;
+            }
+          }
+        }
+        &:last-child {
+          display: flex;
+          align-items: center;
+          @include responsive(xsm) {
+            order: 1;
+            width: 100%;
+            overflow: hidden;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            @include responsive(md) {
+              width: 372px;
+              height: 308px;
+            }
+            @include responsive(xsm) {
+              object-fit: cover;
+              width: 100%;
+              height: 186px;
+            }
+          }
+        }
+        .imgCover {
+          object-fit: contain !important;
+          margin-top: 8.21px;
+        }
+      }
+      //   ==insed==
+
+      &:first-child {
+        margin-top: 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &:nth-child(odd) {
+        background: var(--color-7, #000);
+
+        img {
+          width: 100%;
+          height: 100%;
+
+          @include responsive(xsm) {
+            object-fit: contain;
+            width: 100%;
+            height: 186px;
+          }
+        }
+
+        h2 img {
+          @include responsive(xsm) {
+            object-fit: fill;
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+      &:nth-child(even) {
+        //   insed
+        & div {
+          &:first-child {
+            order: 2;
+            h2 {
+              color: var(--color-7, #000);
+              font-family: Poppins;
+              font-size: 44px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 132.5%; /* 58.3px */
+              img {
+                width: 50px;
+                height: 50px;
+                margin-right: 24px;
+                object-fit: contain !important;
+                @include responsive(md) {
+                  width: 28px;
+                  height: 28px;
+                }
+              }
+              @include responsive(md) {
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 132.5%; /* 42.4px */
+
+                max-width: 299px;
+              }
+            }
+            & > div {
+              color: var(--color-7, #000);
+              font-family: Poppins;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 300;
+              line-height: 26px;
+              display: flex;
+              flex-direction: column;
+              row-gap: 50px;
+              max-width: 564.128px;
+              b {
+                font-weight: 400;
+              }
+              @include responsive(md) {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 20px; /* 142.857% */
+                row-gap: 30px;
+                max-width: 326px;
+              }
+            }
+          }
+          &:last-child {
+            order: 1;
+          }
+        }
+        //   ==insed==
+      }
+    }
+  }
+
+  .Review {
+    margin-top: 63px;
+    @include responsive(md) {
+      height: auto;
+    }
+    @include responsive(xsm) {
+      margin-top: 13px;
+    }
+  }
+}

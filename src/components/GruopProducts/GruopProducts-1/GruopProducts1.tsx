@@ -3,12 +3,19 @@ import React from "react";
 import "./GruopProducts1.scss";
 import Link from "next/link";
 import Product from "@/components/product/Product";
+import axios from "axios";
 
 type GruopProductsType = {
   list?: { id: number; title: string; href: string }[];
   marginBottom?: number;
 };
-function GruopProducts1({ list, marginBottom }: GruopProductsType) {
+async function GruopProducts1({ list, marginBottom }: GruopProductsType) {
+  // console.log(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}products`);
+
+  const get = await fetch(`http://127.0.0.1:1337/api/products`);
+  const data = await get.json();
+  console.log(data.data);
+
   return (
     <div
       className="container"
@@ -44,11 +51,15 @@ function GruopProducts1({ list, marginBottom }: GruopProductsType) {
         </div>
         <div className="GruopProducts1ALL">
           <div className="newAllProducts">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            {data.data.map((value) => {
+              return (
+                <Product
+                  title={value.attributes.title}
+                  urlImage={value.attributes.images}
+                  urlImage2={value.attributes.images2}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

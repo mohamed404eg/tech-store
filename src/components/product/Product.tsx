@@ -11,7 +11,13 @@ import Link from "next/link";
 
 import "./Product.scss";
 import MyRating from "./rating/MyRating";
-function Product() {
+import { type } from "os";
+type productProps = {
+  urlImage: string;
+  urlImage2: string;
+  title: string;
+};
+function Product({ urlImage, urlImage2, title }: productProps) {
   return (
     <Link href={""} className="Product">
       {/* Hover */}
@@ -29,8 +35,8 @@ function Product() {
         <span>in stock</span>
       </div>
       <div className="images">
-        <Image src={ProductImg} alt="Product" />
-        <Image src={ProductImg2} alt="ProductImg2" />
+        <Image src={urlImage2} alt="ProductImg2" width={150} height={150} />
+        <Image src={urlImage} alt="Product" width={150} height={150} />
       </div>
       <MyRating value={1} />
       <p className="desc">

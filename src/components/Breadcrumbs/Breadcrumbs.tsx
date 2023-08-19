@@ -19,6 +19,7 @@ type BreadcrumbsProps = {
     dir: string;
     href: string;
     dirCurrent?: boolean;
+    id: number | string;
   }[];
 };
 
@@ -28,16 +29,16 @@ function Breadcrumbs({ data }: BreadcrumbsProps) {
       {data.map((v) => {
         if (v.dirCurrent === true) {
           return (
-            <>
+            <div key={v.id}>
               <span className="dirCurrent">{v.dir}</span>
-            </>
+            </div>
           );
         }
         return (
-          <>
+          <div key={v.id}>
             <span className="dir">{v.dir}</span>
             <span className="arrow">›</span>
-          </>
+          </div>
         );
       })}
     </div>
