@@ -16,10 +16,11 @@ type productProps = {
   urlImage: string;
   urlImage2: string;
   title: string;
+  id: number;
 };
-function Product({ urlImage, urlImage2, title }: productProps) {
+function Product({ urlImage, urlImage2, title, id }: productProps) {
   return (
-    <Link href={""} className="Product">
+    <Link href={`/product/${id}`} className="Product">
       {/* Hover */}
       <div className="Hover-action">
         <span>
@@ -35,8 +36,18 @@ function Product({ urlImage, urlImage2, title }: productProps) {
         <span>in stock</span>
       </div>
       <div className="images">
-        <Image src={urlImage2} alt="ProductImg2" width={150} height={150} />
-        <Image src={urlImage} alt="Product" width={150} height={150} />
+        <Image
+          src={urlImage2 ? urlImage2 : ProductImg2}
+          alt="ProductImg2"
+          width={150}
+          height={150}
+        />
+        <Image
+          src={urlImage ? urlImage : ProductImg}
+          alt="Product"
+          width={150}
+          height={150}
+        />
       </div>
       <MyRating value={1} />
       <p className="desc">

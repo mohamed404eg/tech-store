@@ -21,8 +21,22 @@ import Account from "../Account/Account";
 import ShopInfo from "./ShopInfo/ShopInfo";
 import MegaMenu from "./MegaMenu/MegaMenu";
 import HeaderMobile from "../HeaderMobile/HeaderMobile";
+import axios from "axios";
 
-function Header() {
+type NavHeaderMap = {
+  id: number;
+  attributes: {
+    title: string;
+    href: string;
+  };
+};
+async function Header() {
+  // NavHeader
+
+  const { data: NavHeader } = await axios(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}navs`
+  );
+
   return (
     <header className="header">
       <div className="header-lg">
@@ -51,7 +65,9 @@ function Header() {
           </div>
         </div>
         <div className="header-second container">
-          <Image src={Logo} alt="logo" />
+          <Link href={"/"}>
+            <Image src={Logo} alt="logo" />
+          </Link>
 
           <InputSearch />
           <div className="header-second-list">
@@ -60,15 +76,14 @@ function Header() {
                 <li className="Laptops">
                   <MegaMenu />
                 </li>
-                <li>Desktop PCs</li>
-                <li>Networking Devices</li>
-                <li>Printers & Scanners</li>
-                <li>PC Parts</li>
-                <li>All Other Products</li>
-                <li>Repairs</li>
-                <li className="Our">
-                  <Link href={""}>Our Deals</Link>
-                </li>
+
+                {NavHeader.data.map((value: NavHeaderMap) => (
+                  <li>
+                    <Link href={value.attributes.href}>
+                      {value.attributes.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>

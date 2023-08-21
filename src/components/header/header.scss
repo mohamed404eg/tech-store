@@ -195,25 +195,7 @@
   }
 }
 
-.Laptops {
-  width: 96px;
-  height: 37px;
-}
-.Laptops:hover {
-  border-radius: 100px;
-  background: $color-3;
 
-  @include trans();
-  .LaptopsText {
-    color: $color-11;
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    @include trans();
-  }
-}
 
 .div-search {
   display: none;

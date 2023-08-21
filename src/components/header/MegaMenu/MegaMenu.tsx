@@ -7,17 +7,71 @@ import Image from "next/image";
 import Product from "@/components/product/Product";
 import arrow from "../../../../public/images/mage/arrow.svg";
 import Brand from "../../brand/Brand";
-function MegaMenu() {
-  const [hidden, setHidden] = React.useState(true);
+import axios from "axios";
+import Link from "next/link";
+import { fetchApiMegaMenu } from "@/types";
+import { rendomId } from "@/hooks/rendomId";
+import { type } from "os";
 
-  const [subCategoryHidden, setSubCategoryHidden] = React.useState(true);
-  const [subCategoryHidden2, setSubCategoryHidden2] = React.useState(true);
+function MegaMenu() {
+  const [hidden, setHidden] = React.useState(false);
+
+  const [subCategoryHidden, setSubCategoryHidden] = React.useState(false);
+  const [subCategoryHidden2, setSubCategoryHidden2] = React.useState(false);
+
+  const [fetchData, setfetchData] = React.useState<fetchApiMegaMenu>();
+  // get data api
+  React.useEffect(() => {
+    axios(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}mega-menus?populate=mega_menu_dropdowns.mega_menu_dropdown_subs`
+    ).then((res) => setfetchData(res.data));
+  }, []);
+  React.useEffect(() => {
+    // console.log(fetchData);
+  }, [fetchData]);
+
+  // ==get data api==
+
+  type RusltfilterDropdownOneProps = {
+    id: number;
+    attributes: {
+      text: string;
+      href: string;
+      dropdown: boolean;
+      mega_menu_dropdown_subs?: {
+        data: [];
+      };
+    };
+  };
+  const RusltfilterDropdownOne: RusltfilterDropdownOneProps[] = [];
+  const filterDropdownOne = fetchData?.data?.filter((v) => {
+    if (v.attributes?.dropdown === true) {
+      return v.attributes?.mega_menu_dropdowns.data.filter(
+        (r: RusltfilterDropdownOneProps) => {
+          RusltfilterDropdownOne.push(r);
+        }
+      );
+    } else {
+      return false;
+    }
+  });
+  const RusltfilterDropdownTow: any[] = [];
+  const filterDropdownTow = RusltfilterDropdownOne?.filter((v) => {
+    if (v.attributes?.dropdown === true) {
+      return v.attributes?.mega_menu_dropdown_subs?.data.filter((r: any) => {
+        //    console.log(r);
+        RusltfilterDropdownTow.push(r);
+      });
+    } else {
+      return false;
+    }
+  });
 
   return (
     <div
-      onMouseLeave={() => {
-        setHidden(true);
-      }}
+    // onMouseLeave={() => {
+    //   setHidden(true);
+    // }}
     >
       <span
         style={{ zIndex: 10, position: "relative" }}
@@ -26,7 +80,7 @@ function MegaMenu() {
         }}
         className="LaptopsText"
       >
-        Laptops
+        <Link href={"/Catalog/1"}>Laptops</Link>
       </span>
 
       <div
@@ -38,58 +92,23 @@ function MegaMenu() {
           <div className="content-one">
             <div className="list">
               {" "}
-              <div
-                onMouseEnter={() => {
-                  setSubCategoryHidden(false);
-                }}
-              >
-                Everyday Use Notebooks{" "}
-                <span className="arrow">
-                  <Image src={arrow} alt="arrow" />
-                </span>
-              </div>
-              <div>
-                MSI Workstation Series{" "}
-                <span className="arrow">
-                  <Image src={arrow} alt="arrow" />
-                </span>
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setSubCategoryHidden(true);
-                }}
-              >
-                MSI Prestige Series
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setSubCategoryHidden(true);
-                }}
-              >
-                Gaming Notebooks
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setSubCategoryHidden(true);
-                }}
-              >
-                {" "}
-                Tablets And Pads
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setSubCategoryHidden(true);
-                }}
-              >
-                Netbooks
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setSubCategoryHidden(true);
-                }}
-              >
-                Infinity Gaming Notebooks
-              </div>
+              {fetchData?.data?.map((value) => (
+                <div
+                  key={rendomId()}
+                  onMouseEnter={() => {
+                    setSubCategoryHidden(false);
+                  }}
+                >
+                  <span key={rendomId()}>{value.attributes.text}</span>
+                  {value.attributes.dropdown ? (
+                    <span className="arrow" key={rendomId()}>
+                      <Image src={arrow} alt="arrow" />
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              ))}
             </div>
 
             <div className="ListProduct">
@@ -103,22 +122,23 @@ function MegaMenu() {
                 <>
                   <div
                     className="list SubCategory "
-                    onMouseLeave={() => {
-                      setTimeout(() => {
-                        if (subCategoryHidden2) {
-                          setSubCategoryHidden(true);
-                        }
-                      }, 1000);
-                    }}
+                    // onMouseLeave={() => {
+                    //   setTimeout(() => {
+                    //     if (subCategoryHidden2) {
+                    //       setSubCategoryHidden(true);
+                    //     }
+                    //   }, 1000);
+                    // }}
                   >
-                    {" "}
-                    <div>
-                      MSI Workstation Series
-                      <span className="arrow">
-                        <Image src={arrow} alt="arrow" />
-                      </span>
-                    </div>
-                    <div>MSI Prestige Series</div>
+                    {}
+                    {RusltfilterDropdownOne?.map((value) => (
+                      <div key={value.id}>
+                        {value.attributes?.text}
+                        <span className="arrow">
+                          <Image src={arrow} alt="arrow" />
+                        </span>
+                      </div>
+                    ))}
                   </div>
 
                   <>
@@ -133,16 +153,15 @@ function MegaMenu() {
                         setSubCategoryHidden2(true);
                       }}
                     >
-                      {" "}
-                      <div>
-                        MSI WS Series <span className="count"> (12)</span>{" "}
-                      </div>
-                      <div>
-                        MSI WT Series <span className="count"> (31)</span>
-                      </div>
-                      <div>
-                        MSI WE Series <span className="count"> (7)</span>
-                      </div>
+                      {RusltfilterDropdownTow?.map((value) => (
+                        <Link href={""} key={rendomId()}>
+                          {value.attributes.text}
+                          <span className="count">
+                            {" "}
+                            ({value.attributes.count})
+                          </span>
+                        </Link>
+                      ))}
                     </div>
                   </>
                 </>

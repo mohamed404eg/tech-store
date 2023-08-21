@@ -35,7 +35,7 @@
       @include b-w(34%, 34%);
       column-gap: 22px;
 
-      div {
+      div ,a {
         color: #000;
         font-family: Poppins;
         font-size: 14px;
@@ -119,5 +119,26 @@
       max-width: 152.717px;
       max-height: 79.484px;
     }
+  }
+}
+.Laptops {
+  width: 96px;
+  height: 37px;
+}
+.Laptops:hover {
+  border-radius: 100px;
+  background: $color-3;
+
+  @include trans();
+  .LaptopsText {
+    a {
+      color: $color-11;
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    @include trans();
   }
 }

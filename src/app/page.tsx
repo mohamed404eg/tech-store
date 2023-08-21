@@ -13,17 +13,43 @@ import Brand from "@/components/brand/Brand";
 import News from "@/components/News/News";
 import Review from "@/components/Home/Review/Review";
 import Footer from "@/components/Footer/Footer";
-export default function Home() {
+
+async function Home() {
+  // get0
+
+  const get = await fetch(`http://127.0.0.1:1337/api/products?random=true`);
+  const data = await get.json();
+
+  // get1
+  const get1 = await fetch(`http://127.0.0.1:1337/api/products?random=true`);
+  const data1 = await get1.json();
+
+  // get2
+  const get2 = await fetch(`http://127.0.0.1:1337/api/products?random=true`);
+  const data2 = await get2.json();
+
+  // get3
+  const get3 = await fetch(`http://127.0.0.1:1337/api/products?random=true`);
+  const data3 = await get3.json();
+
   return (
-    <div>
+    <div className="app">
       <SectionWelcome />
       <NewProducts />
       <Ads />
       <div className="GruopProductsPage">
-        <GruopProducts1 marginBottom={35} />
-        <GruopProducts1 list={GruopProducts1Date} marginBottom={40} />
-        <GruopProducts1 list={GruopProducts1Date} marginBottom={31} />
-        <GruopProducts1 />
+        <GruopProducts1 api={data} marginBottom={35} />
+        <GruopProducts1
+          api={data1}
+          list={GruopProducts1Date}
+          marginBottom={40}
+        />
+        <GruopProducts1
+          api={data2}
+          list={GruopProducts1Date}
+          marginBottom={31}
+        />
+        <GruopProducts1 api={data3} />
       </div>
 
       <ScrollBack />
@@ -37,3 +63,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
