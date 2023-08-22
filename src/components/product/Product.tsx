@@ -6,21 +6,36 @@ import ProductImg2 from "../../../public/images/Product/image 29-2.png";
 import instock from "../../../public/images/Product/instock.svg";
 import like from "../../../public/images/Product/Group 106.svg";
 import statistics from "../../../public/images/Product/Group 107.svg";
-import cart from "../../../public/images/Product/cart.svg";
 import Link from "next/link";
+
+// js file
+import ProductJs from "./ProductJs";
 
 import "./Product.scss";
 import MyRating from "./rating/MyRating";
 import { type } from "os";
+import { rendomId } from "@/hooks/rendomId";
+import AddToCart from "./AddToCart";
 type productProps = {
   urlImage: string;
   urlImage2: string;
   title: string;
   id: number;
+  data: {
+    data: {
+      data: { id: string | number; Quantity: number };
+      id: string | number;
+      Quantity: number;
+    };
+    id: string | number;
+    Quantity: number;
+  };
 };
-function Product({ urlImage, urlImage2, title, id }: productProps) {
+
+function Product({ urlImage, urlImage2, title, id, data }: productProps) {
   return (
     <Link href={`/product/${id}`} className="Product">
+ 
       {/* Hover */}
       <div className="Hover-action">
         <span>
@@ -61,10 +76,7 @@ function Product({ urlImage, urlImage2, title, id }: productProps) {
         <span>$499.00</span>
       </div>
       {/* Hover */}
-      <button className="AddToCart">
-        <Image src={cart} alt="cart" />
-        <span>Add To Cart</span>
-      </button>
+      <AddToCart data={data} />
       {/* ==Hover== */}
     </Link>
   );

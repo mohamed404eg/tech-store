@@ -14,25 +14,25 @@ import Link from "next/link";
 function Brand() {
   return (
     <>
-      <Link href={""}>
+      <Link href={"/Catalog/1"}>
         <Image src={img1} alt="" />
       </Link>{" "}
-      <Link href={""}>
+      <Link href={"/Catalog/1"}>
         <Image src={img2} alt="" />{" "}
       </Link>
-      <Link href={""}>
+      <Link href={"/Catalog/1"}>
         <Image src={img3} alt="" />
       </Link>
-      <Link href={""}>
+      <Link href={"/Catalog/1"}>
         <Image src={img4} alt="" />{" "}
       </Link>
-      <Link href={""}>
+      <Link href={"/Catalog/1"}>
         <Image src={img5} alt="" />
       </Link>
-      <Link href={""}>
+      <Link href={"/Catalog/1"}>
         <Image src={img6} alt="" />
       </Link>
-      <Link href={""}>
+      <Link href={"/Catalog/1"}>
         {" "}
         <Image src={img7} alt="" />
       </Link>

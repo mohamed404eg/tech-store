@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import ProviderRedux from "@/Redux/Provider/ProviderRedux";
-import { StrictMode } from 'react';
+import { StrictMode } from "react";
+import ProviderClient from "@/ProviderClient/ProviderClient";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,7 @@ export default function RootLayout({
           <ProviderRedux>
             <>
               <Header />
-              {children}
+              <ProviderClient>{children}</ProviderClient>
               <Footer />
             </>
           </ProviderRedux>

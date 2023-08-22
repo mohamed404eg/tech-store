@@ -27,21 +27,46 @@
       display: flex;
       flex-direction: row;
       column-gap: 26px;
-      p {
-        color: $color-7;
-        font-family: Poppins;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        margin: 0;
-        @include responsive(md) {
-          font-size: 13px;
+
+      .ReviewSwitch {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        p {
+          color: $color-7;
+          font-family: Poppins;
+          font-size: 18px;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          margin: 0;
+          min-width: 100%;
+          flex-basis: 100%;
+
+          max-width: 850px;
+          max-height: 103.5px;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          @include responsive(md) {
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
         }
       }
+
       .doubleQuotation {
         color: $color-7;
         font-family: Poppins;

@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import CatalogSlice from "./Slice/CatalogSlice/CatalogSlice";
 import ComponentManagementSlice from "./Slice/PageProductComponentManagement/ComponentManagementSlice";
+import CartSlice from "./Slice/CartSlice/CartSlice";
 
 export const store = configureStore({
   reducer: {
     CatalogSliceCounter: CatalogSlice,
     ComponentManagement: ComponentManagementSlice,
+    Cart: CartSlice
   },
 });
 

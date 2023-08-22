@@ -10,6 +10,7 @@ import SectionWelcome375px from "../../../public/images/Home/SectionWelcome/Sect
 import Arrow from "./Arrow/Arrow";
 
 import images from "../../data/WelcomeImg.json";
+import Link from "next/link";
 function SectionWelcome() {
   return (
     <>
@@ -33,7 +34,7 @@ function SectionWelcome() {
               className="SectionWelcomeImg"
             />
           </picture> */}
-          <div className="WelcomeImgAll">
+          <Link href={"/Catalog/1"} className="WelcomeImgAll">
             {images.map((data) => {
               return (
                 <>
@@ -60,7 +61,7 @@ function SectionWelcome() {
                 </>
               );
             })}
-          </div>
+          </Link>
           <Arrow x="right" />
         </div>
       </div>

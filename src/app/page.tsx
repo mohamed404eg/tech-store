@@ -13,6 +13,7 @@ import Brand from "@/components/brand/Brand";
 import News from "@/components/News/News";
 import Review from "@/components/Home/Review/Review";
 import Footer from "@/components/Footer/Footer";
+import ProductJs from "@/components/product/ProductJs";
 
 async function Home() {
   // get0
@@ -31,11 +32,14 @@ async function Home() {
   // get3
   const get3 = await fetch(`http://127.0.0.1:1337/api/products?random=true`);
   const data3 = await get3.json();
+  // get4
+  const get4 = await fetch(`http://127.0.0.1:1337/api/products?random=true`);
+  const data4 = await get4.json();
 
   return (
     <div className="app">
       <SectionWelcome />
-      <NewProducts />
+      <NewProducts api={data4} />
       <Ads />
       <div className="GruopProductsPage">
         <GruopProducts1 api={data} marginBottom={35} />
@@ -60,6 +64,9 @@ async function Home() {
 
       <News />
       <Review />
+
+      {/* file js */}
+      <ProductJs />
     </div>
   );
 }

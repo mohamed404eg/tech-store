@@ -27,6 +27,7 @@
     max-width: 225px;
     min-height: 210px;
     cursor: pointer;
+    text-decoration: none;
     img {
       width: 100%;
       height: 151.106px;
@@ -39,6 +40,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .time {
       color: $color-5;

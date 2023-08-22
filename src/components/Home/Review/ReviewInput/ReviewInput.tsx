@@ -19,6 +19,29 @@ function ReviewInput() {
       );
     }
   };
+
+  React.useEffect(() => {
+    const ReviewSwitch = document.querySelector(".ReviewSwitch");
+    const ReviewSwitchP = ReviewSwitch?.querySelector("p");
+    console.log(ReviewSwitchP?.offsetWidth);
+
+    if (num.rev1 === true) {
+      ReviewSwitch?.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else if (num.rev2 === true) {
+      ReviewSwitch?.scrollTo({
+        left: ReviewSwitchP?.offsetWidth,
+        behavior: "smooth",
+      });
+    } else if (num.rev3 === true) {
+      ReviewSwitch?.scrollTo({
+        left: ReviewSwitchP!.offsetWidth * 2,
+        behavior: "smooth",
+      });
+    }
+  }, [num]);
   return (
     <div className="ReviewInput">
       <div>
