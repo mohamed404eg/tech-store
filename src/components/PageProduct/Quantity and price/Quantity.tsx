@@ -5,21 +5,37 @@ import React from "react";
 // images
 import Frame97 from "../../../../public/images/PageProduct/Frame 97.svg";
 import Frame98 from "../../../../public/images/PageProduct/Frame 98.svg";
-function Quantity() {
-  const [count, setCount] = React.useState<number>(1);
+import { useDispatch, useSelector } from "react-redux";
+import { EditQuantity } from "@/Redux/Slice/CartSlice/CartSlice";
+
+export let QuantityState: number;
+
+// type
+type stateProductsCart = {
+  Cart: {
+    ProductsCart: {}[];
+    Quantity: number;
+  };
+};
+function Quantity({}) {
+  const state = useSelector((state: stateProductsCart) => state.Cart.Quantity);
+  const dispatch = useDispatch();
   React.useEffect(() => {
-    if (count < 1) {
-      setCount(1);
+    if (state < 1) {
+      dispatch(EditQuantity(1));
     }
-    
-  }, [count]);
+  }, [state]);
+
   return (
     <div className="Quantity">
       <input
         type="number"
         placeholder="1"
-        value={count}
-        onChange={(elem) => setCount(parseFloat(elem.currentTarget.value))}
+        value={state}
+        onChange={(elem) => {
+          let num = parseFloat(elem.currentTarget.value);
+          dispatch(EditQuantity(num));
+        }}
       ></input>
       <div className="arrow">
         <Image
@@ -27,16 +43,15 @@ function Quantity() {
           alt="+"
           onClick={() => {
             console.log("click");
-
-            setCount((e) => e + 1);
+            dispatch(EditQuantity(state + 1));
           }}
         ></Image>
         <Image
           src={Frame97}
           alt="-"
           onClick={() => {
-            if (count > 1) {
-              setCount((e) => e - 1);
+            if (state > 1) {
+              dispatch(EditQuantity(state - 1));
             }
           }}
         ></Image>

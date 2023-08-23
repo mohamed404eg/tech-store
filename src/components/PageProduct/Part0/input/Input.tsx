@@ -20,25 +20,20 @@ function Input({ id, numComp, DefaultChecked, name }: InputProps) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
-
-    setTimeout(() => {
-      let all = document.querySelectorAll("input[type='radio']");
-      all?.forEach((ele) => {
-        if (
-          ele.classList.contains("Primar") &&
-          ele instanceof HTMLInputElement
-        ) {
-          ele.checked = true;
-        }
-      });
-    }, 1000);
+    let all = document.querySelectorAll("input[type='radio']");
+    all?.forEach((ele) => {
+      if (ele.classList.contains("Primar") && ele instanceof HTMLInputElement) {
+        //ele.
+        //console.log(ele);
+      }
+    });
   }, []);
 
   return (
     <input
       type="radio"
       name="SelectSection"
+      
       id={id}
       className={name}
       value={id}

@@ -6,6 +6,7 @@ export interface CounterState {
     id: string | number;
     Quantity: number;
   }[];
+  Quantity: number;
 }
 
 export type payloadProductProps = {
@@ -15,6 +16,7 @@ export type payloadProductProps = {
 
 const initialState: CounterState = {
   ProductsCart: [],
+  Quantity: 1,
 };
 
 export const CartSlice = createSlice({
@@ -25,7 +27,6 @@ export const CartSlice = createSlice({
       const item = state.ProductsCart.find(
         (product) => product.id === action.payload.id
       );
-
 
       if (item) {
         item.Quantity = action.payload.Quantity;
@@ -52,11 +53,15 @@ export const CartSlice = createSlice({
     RestProCart: (state, action: { payload: payloadProductProps }) => {
       state.ProductsCart = [];
     },
+    // Quantity
+    EditQuantity: (state, action) => {
+      state.Quantity = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addProCart, RemoveProCart, QuantityProCart, RestProCart } =
+export const { addProCart, RemoveProCart, QuantityProCart, RestProCart ,EditQuantity} =
   CartSlice.actions;
 
 export default CartSlice.reducer;

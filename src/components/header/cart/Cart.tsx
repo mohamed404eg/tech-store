@@ -12,9 +12,20 @@ import { useEffect, useRef, useState } from "react";
 import "./Cart.scss";
 import { log } from "console";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
+// type
+type stateProductsCart = {
+  Cart: {
+    ProductsCart: {}[];
+  };
+};
 function Cart() {
+  const count = useSelector(
+    (state: stateProductsCart) => state.Cart.ProductsCart
+  );
   const [hidden, sethidden] = useState(true);
+console.log(count);
 
   useEffect(() => {
     document.documentElement.addEventListener(
@@ -41,15 +52,15 @@ function Cart() {
           onClick={() => {
             sethidden((e) => !e);
           }}
-          >
+        >
           <Image
             src={jam_shopping_cart}
             alt="jam_shopping_cart"
             className="CartElem"
-            />
-          <span className="CartElem"> 3</span>
+          />
+          <span className="CartElem">{count.length}</span>
         </div>
-            {/*  */}
+        {/*  */}
 
         <div
           className={
@@ -130,3 +141,6 @@ function Cart() {
 }
 
 export default Cart;
+function state(state: unknown): unknown {
+  throw new Error("Function not implemented.");
+}

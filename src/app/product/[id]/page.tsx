@@ -10,8 +10,13 @@ import ProdectPageSngale from "@/components/PageProduct/ProdectPageSngale/Prodec
 import Part3 from "@/components/PageProduct/Part3/Part3";
 import Part4 from "@/components/PageProduct/Part4/Part4";
 import Part5 from "@/components/Part5/Part5";
+import axios from "axios";
 
-const Page = ({ params }: { params: { id: string } }) => {
+const Page = async ({ params }: { params: { id: string } }) => {
+  const GETAPI = await axios
+    .get(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}products/${params.id}`)
+    .catch((err) => console.log(err));
+
   return (
     <div className="product">
       <div className="part0 container">
@@ -19,26 +24,32 @@ const Page = ({ params }: { params: { id: string } }) => {
 
         <div className="PriceQuantityAction">
           <div>
-            <Price />
+            <Price data={GETAPI?.data.data} />
             <Quantity />
           </div>
-          <Action />
+          <Action data={GETAPI?.data.data} />
         </div>
       </div>
       <div className="part1 container">
         <div className="child1">
-          <ComponentManagement />
+          <ComponentManagement data={GETAPI?.data.data} />
         </div>
         <div className="child2">
-
-          <ProdectPageSngale />
+          <ProdectPageSngale  data={GETAPI?.data.data}/>
         </div>
-
-       
       </div>
-      <div className="part3"> <Part3 /></div>
-      <div className="part3"> <Part4 /></div>
-      <div className="part5"> <Part5 /></div>
+      <div className="part3">
+        {" "}
+        <Part3 />
+      </div>
+      <div className="part3">
+        {" "}
+        <Part4 />
+      </div>
+      <div className="part5">
+        {" "}
+        <Part5 />
+      </div>
     </div>
   );
 };

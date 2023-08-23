@@ -10,9 +10,11 @@ import icon3 from "../../../../public/images/Product/mail.svg";
 import installment from "../../../../public/images/PageProduct/installment.svg";
 import Link from "next/link";
 import ComponentManagementResult from "../ComponentManagementResult/ComponentManagementResult";
-import ComponentManagement from "../ComponentManagement/ComponentManagement";
+import ComponentManagement, {
+  ComponentManagementProps,
+} from "../ComponentManagement/ComponentManagement";
 import Part0 from "../Part0/Part0";
-function ProdectPageSngale() {
+function ProdectPageSngale({ data }: ComponentManagementProps) {
   return (
     <div className="ProdectPageSngale">
       <div className="imageProduct">
@@ -23,7 +25,20 @@ function ProdectPageSngale() {
         </div>
 
         <div>
-          <Image className="productimage" src={img} alt="product image"></Image>
+          <Image
+            className="productimage"
+            src={data.attributes.images}
+            alt="product image"
+            width={255}
+            height={444}
+          ></Image>
+          <Image
+            className="productimage2"
+            src={data.attributes.images2}
+            alt="product image"
+            width={255}
+            height={444}
+          ></Image>
         </div>
       </div>
       <div className="installment">

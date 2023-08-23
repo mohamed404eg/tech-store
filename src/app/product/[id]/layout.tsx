@@ -1,5 +1,8 @@
+"use client";
+import { EditQuantity } from "@/Redux/Slice/CartSlice/CartSlice";
 import FilterMobileDrawer from "@/components/Catalog/FilterMobile/FilterMobileDrawer";
 import type { Metadata } from "next";
+import { useDispatch } from "react-redux";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,5 +14,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const dispatch = useDispatch();
+
+  dispatch(EditQuantity(1));
   return <>{children}</>;
 }

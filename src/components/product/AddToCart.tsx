@@ -43,7 +43,6 @@ function AddToCart(data: {
       onClick={() => {
         // console.log(AddQuantity);
         dispatch(addProCart(AddQuantity));
-
         enqueueSnackbar("Added to cart", { variant: "success" });
       }}
     >

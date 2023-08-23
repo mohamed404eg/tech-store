@@ -7,7 +7,30 @@ import Specs from "../MySpecs/Specs";
 import { useSelector } from "react-redux";
 import { ComponentManagementState } from "@/Redux/Slice/PageProductComponentManagement/ComponentManagementSlice";
 
-function ComponentManagement() {
+export type ComponentManagementProps = {
+  data: {
+    id: string | number;
+    Quantity: number;
+    attributes: {
+      afterdiscount: number;
+      currentprice: number;
+      title: string;
+      desc: string;
+
+      color: {
+        id: number;
+        color: string;
+      }[];
+
+      CPU: string;
+      I_O_Ports: string;
+      Featured: string;
+      images: string;
+      images2: string;
+    };
+  };
+};
+function ComponentManagement({ data }: ComponentManagementProps) {
   const countPage = useSelector(
     (state: {
       ComponentManagement: {
@@ -17,10 +40,10 @@ function ComponentManagement() {
   );
 
   return (
-    <div >
+    <div>
       {countPage === 0 ? (
         <>
-          <AboutProduct />
+          <AboutProduct data={data} />
         </>
       ) : (
         <></>
@@ -34,7 +57,7 @@ function ComponentManagement() {
       )}
       {countPage === 2 ? (
         <>
-          <Specs />
+          <Specs data={data} />
         </>
       ) : (
         <></>
